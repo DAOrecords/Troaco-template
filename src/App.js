@@ -3,32 +3,16 @@ import { HashRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { ToastContainer, toast, Slide } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Admin from './Admin/Admin';
-import SplashLanding from './Main/SplashLanding';
 import AdminTopMenu from './Admin/TopMenu';
 import AdminFooter from './Admin/Footer';
 import Message from './Activity/Message';
 import Pending from './Activity/Pending';
 import Ok from './Activity/Ok';
 import Err from './Activity/Err';
-import MyNFTs from './Main/MyNFTs';
 import Withdraw from './Admin/Withdraw';
-import Week2SplashLanding from './Main/Week2/SplashLanding';
-import Week3SplashLanding from './Main/Week3/SplashLanding';
-import Week4SplashLanding from './Main/Week4/SplashLanding';
-import Week5SplashLanding from './Main/Week5/SplashLanding';
-import Week6SplashLanding from './Main/Week6/SplashLanding';
-import Week7SplashLanding from './Main/Week7/SplashLanding';
-import Week8SplashLanding from './Main/Week8/SplashLanding';
-import Week9SplashLanding from './Main/Week9/SplashLanding';
-import Week10SplashLanding from './Main/Week10/SplashLanding';
-import Week11SplashLanding from './Main/Week11/SplashLanding';
-import Week12SplashLanding from './Main/Week12/SplashLanding';
 import Migration from './Migration';
 import TransferModal from './Main/TransferModal';
-import ReactDraggableOnly from './Experiment/ReactDraggableOnly';
-import ReactDraggableGridSize from './Experiment/ReactDraggableGridSize';
-import ReactDraggableFont from './Experiment/ReactDraggableFont';
-import Troaco from './Main/Troaco/Troaco';
+import Troaco from './Main/Troaco';
 
 
 export default function App() {
@@ -128,13 +112,6 @@ export default function App() {
               <Admin newAction={newAction} vault={configObj.contractName} />
               <AdminFooter />
             </>
-          }
-        />
-        <Route 
-          exact
-          path='my-nfts'
-          element={
-            <MyNFTs newAction={newAction} openGuestBook={openGuestBook} setGuestBook={setGuestBook} setShowWallet={setShowWallet} showWallet={showWallet} />
           }
         />
         <Route

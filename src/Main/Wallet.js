@@ -1,9 +1,9 @@
 import React from 'react';
-import { login, logout, getBalance } from '../utils';
-import nearLogo from '../assets/near.svg';
+import { login, logout, getBalance } from '../../utils';
+import nearLogo from '../../assets/near_white.svg';
 
 
-export default function Wallet({setShowWallet, showWallet, transparent, setMenuOpen, setSplashMenuOpen}) {
+export default function Wallet({setShowWallet, showWallet}) {
   const [balance, setBalance] = React.useState("NaN");
   const [dollar, setDollar] = React.useState("NaN");
 
@@ -29,47 +29,40 @@ export default function Wallet({setShowWallet, showWallet, transparent, setMenuO
     setShowWallet(false);
   }
 
-  function badgeClicked() {
-    setMenuOpen(false);
-    setSplashMenuOpen(false);
-    setShowWallet(!showWallet);
-  }
 
   if (!window.walletConnection.isSignedIn()) {
     return (
       <>
-        <div className="controls controlsLast">
-          <button onClick={login}  className="mainWalletBadge">Connect Wallet</button>
+        <div className="controls">
+          <button onClick={login}  className="troacoWalletBadge">Connect Wallet</button>
         </div>
       </>
     );
   } else {
     return (
       <>
-        <div className="controls controlsLast">
-          <button className={transparent ? "mainWalletBadge mainWalletBadgeTransparent" : "mainWalletBadge"}
-            onClick={badgeClicked}
-            onBlur={() => console.log("onblur does nothing")}
-            tabIndex={"0"}
+        <div className="controls">
+          <button className="troacoWalletBadge"
+            onClick={() => setShowWallet(!showWallet)}
           >
             {window.accountId}
           </button>
         </div>
 
         {showWallet && (
-          <div id="wallet" className="mainWalletContainer">
-            <div id="mainWalletBalanceFlex">
+          <div id="wallet" className="troacoWalletContainer">
+            <div id="troacoWalletBalanceFlex">
               <p>BALANCE</p>
-              
+              <img id="troacoWalletNearLogo" src={nearLogo} alt='N' />
               <p className="walletFlexPlaceholder"></p>
               <p>{formatNumber(balance, 3)}</p>
             </div>            
-            <div id="mainWalletDollarFlex">
+            <div id="troacoWalletDollarFlex">
               <p className="walletFlexPlaceholder"></p>
               <p>~ ${formatNumber(dollar, 2)}</p>
             </div>
-            <div id="mainWalletButtonContainer">
-              <button onClick={disconnectClicked} id="mainDisconnect">DISCONNECT</button>
+            <div id="troacoWalletButtonContainer">
+              <button onClick={disconnectClicked} id="troacoDisconnect"></button>
             </div>
           </div>
         )}

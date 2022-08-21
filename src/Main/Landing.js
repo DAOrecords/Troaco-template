@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import Draggable from 'react-draggable';
 import Arrows from './Arrows';
 import BuyModal from './BuyModal';
