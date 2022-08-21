@@ -109,11 +109,6 @@ export default function App() {
       <Routes>
         <Route 
           exact
-          path='/'
-          element={<Navigate replace to="/weektwelve" />}
-        />
-        <Route 
-          exact
           path='init'
           element={ configObj.admin?<button onClick={initContract}>INIT</button> : <p>loading...</p> }
         />
@@ -146,127 +141,10 @@ export default function App() {
           path='nfts/:tokenId'
           element={<TransferModal newAction={newAction} />}
         />
-        {/** The 12 SoundSplash NFT Landing Pages */}
+        
         <Route 
           exact
-          path='testnft0926'
-          element={
-            <Week12SplashLanding
-              index={9} newAction={newAction} configObj={configObj} openGuestBook={openGuestBook} setGuestBook={setGuestBook} setShowActivity={setShowActivity} showActivity={showActivity} actionHistory={actionHistory} setShowWallet={setShowWallet} showWallet={showWallet} 
-            />
-          }
-        />
-        <Route 
-          exact
-          path='weekone'
-          element={
-            <SplashLanding 
-              index={2} newAction={newAction} configObj={configObj} openGuestBook={openGuestBook} setGuestBook={setGuestBook} setShowActivity={setShowActivity} showActivity={showActivity} actionHistory={actionHistory} setShowWallet={setShowWallet} showWallet={showWallet} 
-            />
-          }
-        />
-        <Route 
-          exact
-          path='weektwo'
-          element={
-            <Week2SplashLanding 
-              index={3} newAction={newAction} configObj={configObj} openGuestBook={openGuestBook} setGuestBook={setGuestBook} setShowActivity={setShowActivity} showActivity={showActivity} actionHistory={actionHistory} setShowWallet={setShowWallet} showWallet={showWallet}
-            />
-          }
-        />
-        <Route 
-          exact
-          path='weekthree'
-          element={
-            <Week3SplashLanding 
-              index={4} newAction={newAction} configObj={configObj} openGuestBook={openGuestBook} setGuestBook={setGuestBook} setShowActivity={setShowActivity} showActivity={showActivity} actionHistory={actionHistory} setShowWallet={setShowWallet} showWallet={showWallet}
-            />
-          }
-        />
-        <Route 
-          exact
-          path='weekfour'
-          element={
-            <Week4SplashLanding 
-              index={5} newAction={newAction} configObj={configObj} openGuestBook={openGuestBook} setGuestBook={setGuestBook} setShowActivity={setShowActivity} showActivity={showActivity} actionHistory={actionHistory} setShowWallet={setShowWallet} showWallet={showWallet}
-            />
-          }
-        />
-        <Route 
-          exact
-          path='weekfive'
-          element={
-            <Week5SplashLanding 
-              index={6} newAction={newAction} configObj={configObj} openGuestBook={openGuestBook} setGuestBook={setGuestBook} setShowActivity={setShowActivity} showActivity={showActivity} actionHistory={actionHistory} setShowWallet={setShowWallet} showWallet={showWallet}
-            />
-          }
-        />
-        <Route 
-          exact
-          path='weeksix'
-          element={
-            <Week6SplashLanding 
-              index={7} newAction={newAction} configObj={configObj} openGuestBook={openGuestBook} setGuestBook={setGuestBook} setShowActivity={setShowActivity} showActivity={showActivity} actionHistory={actionHistory} setShowWallet={setShowWallet} showWallet={showWallet}
-            />
-          }
-        />
-        <Route 
-          exact
-          path='weekseven'
-          element={
-            <Week7SplashLanding 
-              index={8} newAction={newAction} configObj={configObj} openGuestBook={openGuestBook} setGuestBook={setGuestBook} setShowActivity={setShowActivity} showActivity={showActivity} actionHistory={actionHistory} setShowWallet={setShowWallet} showWallet={showWallet}
-            />
-          }
-        />
-        <Route 
-          exact
-          path='weekeight'
-          element={
-            <Week8SplashLanding 
-              index={9} newAction={newAction} configObj={configObj} openGuestBook={openGuestBook} setGuestBook={setGuestBook} setShowActivity={setShowActivity} showActivity={showActivity} actionHistory={actionHistory} setShowWallet={setShowWallet} showWallet={showWallet}
-            />
-          }
-        />
-        <Route 
-          exact
-          path='weeknine'
-          element={
-            <Week9SplashLanding 
-              index={10} newAction={newAction} configObj={configObj} openGuestBook={openGuestBook} setGuestBook={setGuestBook} setShowActivity={setShowActivity} showActivity={showActivity} actionHistory={actionHistory} setShowWallet={setShowWallet} showWallet={showWallet}
-            />
-          }
-        />
-        <Route 
-          exact
-          path='weekten'
-          element={
-            <Week10SplashLanding 
-              index={11} newAction={newAction} configObj={configObj} openGuestBook={openGuestBook} setGuestBook={setGuestBook} setShowActivity={setShowActivity} showActivity={showActivity} actionHistory={actionHistory} setShowWallet={setShowWallet} showWallet={showWallet}
-            />
-          }
-        />
-        <Route 
-          exact
-          path='weekeleven'
-          element={
-            <Week11SplashLanding 
-              index={12} newAction={newAction} configObj={configObj} openGuestBook={openGuestBook} setGuestBook={setGuestBook} setShowActivity={setShowActivity} showActivity={showActivity} actionHistory={actionHistory} setShowWallet={setShowWallet} showWallet={showWallet}
-            />
-          }
-        />
-        <Route 
-          exact
-          path='weektwelve'
-          element={
-            <Week12SplashLanding 
-              index={13} newAction={newAction} configObj={configObj} openGuestBook={openGuestBook} setGuestBook={setGuestBook} setShowActivity={setShowActivity} showActivity={showActivity} actionHistory={actionHistory} setShowWallet={setShowWallet} showWallet={showWallet}
-            />
-          }
-        />
-        <Route 
-          exact
-          path='troaco'
+          path='/'
           element={
             <Troaco 
               newAction={newAction} openGuestBook={openGuestBook} setGuestBook={setGuestBook} setShowActivity={setShowActivity} showActivity={showActivity} actionHistory={actionHistory} setShowWallet={setShowWallet} showWallet={showWallet} isMyNfts={false}
@@ -275,7 +153,7 @@ export default function App() {
         />
         <Route 
           exact
-          path='troacomynfts'
+          path='mynfts'
           element={
             <Troaco 
               newAction={newAction} openGuestBook={openGuestBook} setGuestBook={setGuestBook} setShowActivity={setShowActivity} showActivity={showActivity} actionHistory={actionHistory} setShowWallet={setShowWallet} showWallet={showWallet} isMyNfts={true}
@@ -296,21 +174,6 @@ export default function App() {
           }
         />
 
-        <Route 
-          exact
-          path='experiment1'
-          element={<ReactDraggableOnly />}
-        />
-        <Route 
-          exact
-          path='experiment2'
-          element={<ReactDraggableGridSize />}
-        />
-        <Route 
-          exact
-          path='experiment3'
-          element={<ReactDraggableFont />}
-        />
       </Routes>
     </HashRouter>
   );

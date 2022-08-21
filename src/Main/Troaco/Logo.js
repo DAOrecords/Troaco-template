@@ -12,7 +12,7 @@ export default function Logo() {
   }
 
   return (
-    <Link to={'/troaco'}>
+    <Link to={'/'}>
       <img src={"logo"} alt={'Troaco'} style={logoStyle} />
     </Link>
   )
