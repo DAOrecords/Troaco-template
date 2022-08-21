@@ -1,7 +1,7 @@
 import React from 'react';
 import icon from '../assets/github.svg';
 
-
+/** Admin is using these */
 export default function GitHub() {
   return (
     <>

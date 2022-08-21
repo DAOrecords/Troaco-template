@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { getBuyableTokens, verify_sha256 } from '../../utils';
+import { getBuyableTokens, verify_sha256 } from '../utils';
 import 'regenerator-runtime/runtime';
 import TopMenu from './TopMenu';
 import Landing from './Landing';
 import Logo from './Logo';
 import BottomMenu from './BottomMenu';
 import MyNFTs from './MyNFTs';
-import globeBg from '../../assets/globe_bg.jpg';
+import globeBg from '../assets/globe_bg.jpg';
 import GuestBook from './GuestBook';
 
 

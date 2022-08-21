@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { utils } from 'near-api-js';
-import { buyNFTfromVault, verify_sha256 } from '../../utils';
-import SlimAudioPlayer from '../../Common/SlimAudioPlayer';
-import closeIcon from '../../assets/close.svg';
+import { buyNFTfromVault, verify_sha256 } from '../utils';
+import SlimAudioPlayer from '../Common/SlimAudioPlayer';
+import closeIcon from '../assets/close.svg';
 
 
 export default function TokenModal({id, metadata, newAction, setOpenModal}) {

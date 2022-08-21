@@ -1,6 +1,6 @@
 import React from 'react';
-import { login, logout, getBalance } from '../../utils';
-import nearLogo from '../../assets/near_white.svg';
+import { login, logout, getBalance } from '../utils';
+import nearLogo from '../assets/near_white.svg';
 
 
 export default function Wallet({setShowWallet, showWallet}) {

@@ -1,6 +1,6 @@
 import React from 'react';
-import arrowLeft from '../../assets/arrow_left.svg';
-import arrowRight from '../../assets/arrow_right.svg';
+import arrowLeft from '../assets/arrow_left.svg';
+import arrowRight from '../assets/arrow_right.svg';
 
 
 export default function Arrows({selected, setSelected, max}) {

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { getGuestBookEntries, sendGuestBookEntry } from '../../utils';
+import { getGuestBookEntries, sendGuestBookEntry } from '../utils';
 const moment = require("moment");
-import closeIcon from '../../assets/close.svg';
+import closeIcon from '../assets/close.svg';
 
 
 export default function GuestBook({newAction, setOpenModal}) {

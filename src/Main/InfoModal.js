@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { utils } from 'near-api-js';
-import { getAllFromRoot, transferNft } from '../../utils';
-import SlimAudioPlayer from '../../Common/SlimAudioPlayer';
-import nearLogo from '../../assets/near_white.svg';
-import closeIcon from '../../assets/close.svg';
+import { getAllFromRoot, transferNft } from '../utils';
+import SlimAudioPlayer from '../Common/SlimAudioPlayer';
+import nearLogo from '../assets/near_white.svg';
+import closeIcon from '../assets/close.svg';
 
 
 export default function InfoModal({id, metadata, newAction, setOpenModal}) {

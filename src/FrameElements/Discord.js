@@ -1,7 +1,7 @@
 import React from 'react';
 import icon from '../assets/discord.svg';
 
-
+/** Admin is using these */
 export default function Discord() {
   return (
     <>

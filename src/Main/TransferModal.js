@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams, useLocation } from "react-router-dom";
-import AudioPlayer from '../Common/AudioPlayer';
 import AudioPlayerNftStorage from "../Common/AudioPlayerNftStorage";
 import { getAllFromRoot, getContractName, getNftDetails, transferNft, verify_sha256 } from '../utils';
 import artistLists from '../artistLists.json';
