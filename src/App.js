@@ -11,7 +11,6 @@ import Ok from './Activity/Ok';
 import Err from './Activity/Err';
 import Withdraw from './Admin/Withdraw';
 import Migration from './Migration';
-import TransferModal from './Main/TransferModal';
 import Troaco from './Main/Troaco';
 
 
@@ -113,10 +112,6 @@ export default function App() {
               <AdminFooter />
             </>
           }
-        />
-        <Route
-          path='nfts/:tokenId'
-          element={<TransferModal newAction={newAction} />}
         />
         
         <Route 
