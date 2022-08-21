@@ -10,7 +10,6 @@ import Pending from './Activity/Pending';
 import Ok from './Activity/Ok';
 import Err from './Activity/Err';
 import Withdraw from './Admin/Withdraw';
-import Migration from './Migration';
 import Troaco from './Main/Troaco';
 
 
@@ -94,11 +93,6 @@ export default function App() {
           exact
           path='init'
           element={ configObj.admin?<button onClick={initContract}>INIT</button> : <p>loading...</p> }
-        />
-        <Route
-          exact
-          path='migration'
-          element={<Migration contractName={configObj.contractName} />}
         />
         <Route 
           exact
