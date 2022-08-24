@@ -94,7 +94,7 @@ nav {
 
 #troacoTopNav {
   margin-top: 30px;
-  font-family: VCR;
+  font-family: Montserrat;
   align-items: flex-start;
   justify-content: flex-end;
   background: transparent;
@@ -198,11 +198,11 @@ nav {
 .troacoMenuButton {
   margin-right: 32px;
   margin-top: 7px;
-  font-family: VCR;
+  font-family: Montserrat;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 16px;
-  line-height: 18px;
+  line-height: 20px;
   letter-spacing: 0.05em;
   text-decoration: none;
   color: #F2F2F2;
