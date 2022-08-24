@@ -38,6 +38,11 @@
 }
 
 @font-face {
+  font-family: Montserrat;
+  src: url('./assets/Montserrat-Regular.ttf');
+}
+
+@font-face {
   font-family: VCR;
   src: url('./assets/VCR_OSD_MONO_1.001.ttf');
 }
@@ -98,9 +103,9 @@ nav {
 }
 
 #troacoBottomNav {
-  bottom: 30px;
-  left: 240px;
-  width: calc(100% - 2 * 240px);
+  bottom: 32px;
+  left: 53px;
+  width: 60%;
   text-align: center;
   top: unset;
   background: transparent;
@@ -112,25 +117,32 @@ nav {
 
 #troacoSongMenu {
   display: flex;
-  justify-content: space-evenly;
+  flex-wrap: wrap;
   width: 100%;
-  font-family: Inter;
-  font-weight: 400;
-  font-size: 10px;
-  line-height: 12px;
-  color: #BDBDBD;
-  text-transform: uppercase;
   list-style-type: none;
+  justify-content: space-between;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: #BDBDBD;
+}
+#troacoSongMenu li {
+  margin-bottom: 23px;
 }
 
 .troacoSongSelected {
+  font-weight: 700;
   color: #F2F2F2;
 }
 
 #troacoSocialLinks {
   position: absolute;
   bottom: 10px;
-  left: 32px;
+  left: 70%;
   display: flex;
   flex-direction: column;
 }
@@ -888,6 +900,7 @@ input[type="range"] {
   grid-area: right;
   background: rgba(217, 217, 217, 0.1);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-radius: 10px;
   padding-left: var(--spacing-1);
   display: flex;
