@@ -12,7 +12,7 @@ export default function InfoModal({id, metadata, newAction, setOpenModal}) {
   const [transferInputOpen, setTransferInputOpen] = useState(false);
   const [selectedView, setSelectedView] = useState("info");
   const [nftTree, setNftTree] = useState([]);
-  const [events, setEvents] = useState(mockEvents);                   // NFT events, like buy or transfer
+  const [events, setEvents] = useState([]);                   // NFT events, like buy or transfer
   
 
   function close(e) {

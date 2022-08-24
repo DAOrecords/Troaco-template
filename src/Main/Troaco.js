@@ -22,7 +22,7 @@ export default function Troaco({newAction, openGuestBook, setGuestBook, setShowW
     backgroundRepeat: "repeat-x",
   }
 
-  /*
+  
   const screenWidth = window.innerWidth;
   const [nftList, setNftList] = React.useState([]);  
 
@@ -50,7 +50,7 @@ export default function Troaco({newAction, openGuestBook, setGuestBook, setShowW
 
   if (nftList.length === 0) return <p>Loading...</p>
 
-  */
+  
   return (
     <>
       {openGuestBook && ( <GuestBook openModal={openGuestBook} newAction={newAction} setOpenModal={setGuestBook} /> )}
@@ -60,9 +60,9 @@ export default function Troaco({newAction, openGuestBook, setGuestBook, setShowW
 
         <main style={bgStyle}>
           {isMyNfts ? 
-            <MyNFTs newAction={newAction} nftList={mockMyNFTlist} selected={selected} setSelected={setSelected} />
+            <MyNFTs newAction={newAction} nftList={nftList} selected={selected} setSelected={setSelected} />
           : 
-            <Landing newAction={newAction} nftList={mockNFTlist} selected={selected} setSelected={setSelected} />
+            <Landing newAction={newAction} nftList={nftList} selected={selected} setSelected={setSelected} />
           }
         </main>
 

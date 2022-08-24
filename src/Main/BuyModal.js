@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { utils } from 'near-api-js';
 import { buyNFTfromVault, verify_sha256 } from '../utils';
 import SlimAudioPlayer from '../Common/SlimAudioPlayer';

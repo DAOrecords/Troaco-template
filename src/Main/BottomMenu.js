@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-export default function BottomMenu({nftList, selected, setSelected}) {
+export default function BottomMenu() {
   return (
     <>
       <div id="troacoSocialLinks">

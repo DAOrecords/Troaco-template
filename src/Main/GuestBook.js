@@ -10,8 +10,7 @@ export default function GuestBook({newAction, setOpenModal}) {
   
   useEffect(async () => {
     const fetchedEntries = await getGuestBookEntries();
-    //setEntries(fetchedEntries);
-    setEntries(mockEntries);
+    setEntries(fetchedEntries);
   }, [])
   
   function inputHandler(newText) {
