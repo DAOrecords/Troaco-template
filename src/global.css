@@ -144,7 +144,7 @@ nav {
   bottom: 10px;
   left: 70%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 #troacoSocialLinks a {
@@ -154,7 +154,8 @@ nav {
 #troacoLogo {
   position: absolute;
   bottom: var(--spacing-3);
-  right: var(--spacing-5);
+  right: 46px;
+  margin: 0;
 }
 
 .logo {

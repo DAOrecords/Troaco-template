@@ -1,5 +1,5 @@
 import React from 'react';
-
+import metaJAX from '../assets/metaJAXLogo.svg';
 
 export default function BottomMenu() {
   return (
@@ -18,7 +18,7 @@ export default function BottomMenu() {
           <GitHub />
         </a>
       </div>
-      <p id="troacoLogo"><DAOrecordsTemp /></p>
+      <p id="troacoLogo"><img src={metaJAX} alt={'metaJAX'}/></p>
     </>
   )
 }

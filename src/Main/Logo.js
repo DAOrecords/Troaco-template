@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../assets/ArturoLogo.png';
+
 
 export default function Logo() {
   const logoPixel = 30;
@@ -7,13 +9,13 @@ export default function Logo() {
   const logoStyle = {
     position: "absolute",
     zIndex: "500",
-    top: "32px",
-    left: `calc(50% - ${logoPixel}px)`,
+    top: "33px",
+    left: "67px",
   }
 
   return (
     <Link to={'/'}>
-      <img src={"logo"} alt={'Troaco'} style={logoStyle} />
+      <img src={logo} alt={'Troaco'} style={logoStyle} />
     </Link>
   )
 }
