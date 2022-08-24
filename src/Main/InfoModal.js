@@ -140,25 +140,7 @@ export default function InfoModal({id, metadata, newAction, setOpenModal}) {
               {selectedView === "history" && (
                 <div className="troacoModalRightSideContent">
                   <ul id="troacoModalListContainer">
-                  {events.map((event, i) => { console.log("event: ",event);return (
-                    <li className="troacoModalSmallGlass" key={i}>
-                      <div className="toacoModalSmallGlassUpperLine">
-                        {(event.type === "buy") && 
-                          <>
-                            <p className="troacoModalSmallGlassElement troacoModalStrongText">{event.receiver}</p>
-                            <p className="troacoModalSmallGlassElement troacoModalWeakText">&nbsp;bought this NFT from&nbsp;</p>
-                            <p className="troacoModalSmallGlassElement troacoModalStrongText">{event.sender}</p>
-                            <p className="troacoModalSmallGlassElement troacoModalWeakText">&nbsp;for {event.price}</p>
-                            <img className="troacoModalSmallGlassPriceMargin" src={nearLogo}></img>
-                          </>
-                        }
-                        {(event.type === "something_else") && <p className="troacoModalSmallGlassElement troacoModalStrongText">Something else</p>}
-                      </div>
-                      <div className="troacoModalSmallGlassBottomLine">
-                        <p className="troacoModalSmallGlassElement troacoModalWeakText">{"{Should calculate date here}"}</p>
-                      </div>
-                    </li>
-                  )})}
+                    Coming soon...
                   </ul>
                 </div>
               )}
@@ -248,3 +230,27 @@ const mockEvents = [
     price: 5
   }
 ]
+
+
+/* 
+ instead of coming soon:
+ {events.map((event, i) => { console.log("event: ",event);return (
+                    <li className="troacoModalSmallGlass" key={i}>
+                      <div className="toacoModalSmallGlassUpperLine">
+                        {(event.type === "buy") && 
+                          <>
+                            <p className="troacoModalSmallGlassElement troacoModalStrongText">{event.receiver}</p>
+                            <p className="troacoModalSmallGlassElement troacoModalWeakText">&nbsp;bought this NFT from&nbsp;</p>
+                            <p className="troacoModalSmallGlassElement troacoModalStrongText">{event.sender}</p>
+                            <p className="troacoModalSmallGlassElement troacoModalWeakText">&nbsp;for {event.price}</p>
+                            <img className="troacoModalSmallGlassPriceMargin" src={nearLogo}></img>
+                          </>
+                        }
+                        {(event.type === "something_else") && <p className="troacoModalSmallGlassElement troacoModalStrongText">Something else</p>}
+                      </div>
+                      <div className="troacoModalSmallGlassBottomLine">
+                        <p className="troacoModalSmallGlassElement troacoModalWeakText">{"{Should calculate date here}"}</p>
+                      </div>
+                    </li>
+                  )})}
+*/
