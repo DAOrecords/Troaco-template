@@ -58,13 +58,14 @@ export default function Landing({selected, setSelected, nftList, newAction}) {
   const bubbleStyleTemp = {
     margin: "25px",
     background: "rgba(217, 217, 217, 0.2)",
-    fontFamily: 'VCR',
+    fontFamily: 'Montserrat',
     fontStyle: "normal",
     textTransform: "uppercase",
-    color: "#E0E0E0",
-    fontWeight: 400,
-    fontSize: "14px",
-    lineHeight: "14px",
+    color: "#BDBDBD",
+    fontWeight: 500,
+    fontSize: "12px",
+    lineHeight: "15px",
+    letterSpacing: "0.01em",
     borderRadius: "500px",
     height: "80%",
     width: "80%",
@@ -76,9 +77,9 @@ export default function Landing({selected, setSelected, nftList, newAction}) {
   }
 
   const bubbleStyleSelectedTemp = {
-    color: "#FFFFFF",
-    fontSize: "22px",
-    lineHeight: "21px",
+    color: "#F2F2F2",
+    fontSize: "24px",
+    lineHeight: "29px",
     width: "160%",
     height: "160%",
     margin: 0,

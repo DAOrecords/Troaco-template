@@ -35,7 +35,7 @@ export default function Landing({selected, setSelected, nftList, newAction}) {
   }
   
   const transitionStyleTemp = {
-    transition: "transform 2.3s",
+    transition: "transform 0.3s",             // centering animation
   }
   
   const liStyleTemp = {
@@ -51,19 +51,20 @@ export default function Landing({selected, setSelected, nftList, newAction}) {
     marginLeft: `${bigMargin}px`,
     marginRight: `${bigMargin}px`,
     marginTop: `${-listElementWidth/2}px`,
-    transition: "margin 1.3s ease-in",
+    transition: "margin 0.3s ease-in",       // create space for the bubble animation
   }
   
   const bubbleStyleTemp = {
     margin: "25px",
     background: "rgba(217, 217, 217, 0.2)",
-    fontFamily: 'VCR',
+    fontFamily: 'Montserrat',
     fontStyle: "normal",
     textTransform: "uppercase",
-    color: "#E0E0E0",
-    fontWeight: 400,
-    fontSize: "14px",
-    lineHeight: "14px",
+    color: "#BDBDBD",
+    fontWeight: 500,
+    fontSize: "12px",
+    lineHeight: "15px",
+    letterSpacing: "0.01em",
     borderRadius: "500px",
     height: "80%",
     width: "80%",
@@ -71,18 +72,18 @@ export default function Landing({selected, setSelected, nftList, newAction}) {
     alignItems: "center",
     justifyItems: "center",
     justifyContent: "center",
-    transition: "width 1s, height 1s, transform 1s",
+    transition: "width 0.3s, height 0.3s, transform 0.3s",         // bubble grow back animation
   }
 
   const bubbleStyleSelectedTemp = {
-    color: "#FFFFFF",
-    fontSize: "22px",
-    lineHeight: "21px",
+    color: "#F2F2F2",
+    fontSize: "24px",
+    lineHeight: "29px",
     width: "160%",
     height: "160%",
     margin: 0,
     marginLeft: `${-(listElementWidth*1.6*magicNumber)}px`,
-    transition: "width 2.3s, height 2.3s, margin 2.3s, font ease-out 0.0s",
+    transition: "width 0.3s, height 0.3s, margin 0.3s, font ease-out 0.0s",     // bubble grow animation
   }
 
   useEffect(() => {
