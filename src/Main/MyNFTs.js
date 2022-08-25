@@ -60,6 +60,7 @@ export default function Landing({selected, setSelected, nftList, newAction}) {
     fontFamily: 'Montserrat',
     fontStyle: "normal",
     textTransform: "uppercase",
+    caretColor: "transparent",
     color: "#BDBDBD",
     fontWeight: 500,
     fontSize: "12px",
