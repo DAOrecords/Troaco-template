@@ -65,7 +65,7 @@ export default function TokenModal({id, metadata, newAction, setOpenModal}) {
           </div>
           
           <div id="troacoModalButtons">
-            <button onClick={buyNFT} id="nftBuyButton">Buy</button>
+            <button onClick={buyNFT} id="modalMainButton">Buy</button>
           </div>
 
           <button id="troacoModalClose" onClick={() => setOpenModal(false)}>

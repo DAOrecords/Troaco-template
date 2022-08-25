@@ -10,7 +10,7 @@ export default function GuestBook({newAction, setOpenModal}) {
   
   useEffect(async () => {
     const fetchedEntries = await getGuestBookEntries();
-    setEntries(mockEntries);
+    setEntries(fetchedEntries);
   }, [])
   
   function inputHandler(newText) {
@@ -76,7 +76,7 @@ export default function GuestBook({newAction, setOpenModal}) {
 
           <div id="troacoModalAudio"></div>
           <div id="troacoModalButtons">
-            <button onClick={sendEntry} id="guestbookSendButton"></button>
+            <button onClick={sendEntry} id="modalMainButton">Send</button>
           </div>
           
           <button id="troacoModalClose" onClick={() => setOpenModal(false)}>

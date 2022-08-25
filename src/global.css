@@ -1365,28 +1365,8 @@ input[type="range"] {
   width: 100%;
 }
 
-#guestbookSendButton {
-  background: url('./assets/send.svg') no-repeat;
-  width: 130px;
-  height: 37px;
-  border: none;
-  color: white;
-  background-color: none;
-  border-radius: 2px;
-}
 
-#guestbookSendButton:hover {
-  background: url('./assets/sendHover.svg') no-repeat;
-  cursor: pointer;
-}
-
-#guestbookSendButton:disabled {
-  background: url('./assets/sendDisabled.svg') no-repeat;
-  cursor: pointer;
-}
-
-
-#nftBuyButton {
+#modalMainButton {
   width: 99px;
   height: 36px;
   border: none;
@@ -1404,7 +1384,7 @@ input[type="range"] {
   margin-left: var(--spacing-3);
 }
 
-#nftBuyButton:hover {
+#modalMainButton:hover {
   background: #F2F2F2;
   border: 1px solid #F2F2F2;
   color: #333333;
