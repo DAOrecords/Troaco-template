@@ -359,7 +359,7 @@ footer ul li {
 }
 
 footer ul li a {
-  font-family: Inter;
+  font-family: Montserrat;
   font-size: 12px;
   line-height: 14px;
   text-decoration: none;
@@ -762,7 +762,7 @@ input[type=number] {
 }
 
 h1 {
-  font-family: Inter;
+  font-family: Montserrat;
   font-size: 40px;
   /*margin-top: calc(var(--nav-size) + 72px);*/
   margin-top: 60px;
@@ -961,7 +961,7 @@ input[type="range"] {
 }
 
 .troacoModalRightSideContent {
-  font-family: Inter;
+  font-family: Montserrat;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -982,11 +982,11 @@ input[type="range"] {
 }
 
 .troacoModalBigText {
-  font-family: VCR;
+  font-family: Montserrat;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 24px;
-  line-height: 23px;
+  line-height: 29px;
   text-transform: uppercase;
   color: #FFFFFF;
   margin-top: 16px;
@@ -1031,16 +1031,19 @@ input[type="range"] {
 .troacoModalMenuKnob {
   border: none;
   background: transparent;
-  font-family: VCR;
+  font-family: Montserrat;
   text-transform: uppercase;
+  font-style: normal;
+  font-weight: 500;
   font-size: 12px;
-  line-height: 12px;
+  line-height: 15px;
   color: #BDBDBD;
 }
 
 .troacoModalMenuSelected {
   text-decoration: underline;
-  color: #FFFFFF;
+  font-weight: 600;
+  color: #F2F2F2;
 }
 
 #troacoModalListContainer {
@@ -1092,22 +1095,22 @@ input[type="range"] {
 }
 
 .troacoModalStrongText {
-  font-family: VCR;
+  font-family: Montserrat;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 14px;
-  line-height: 14px;
+  line-height: 17px;
   text-transform: uppercase;
   color: #FFFFFF;
 }
 
 .troacoModalWeakText {
-  font-family: Inter;
+  font-family: Montserrat;
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
   line-height: 15px;
-  color: #E0E0E0;
+  color: #BDBDBD;
 }
 
 .troacoSmallBuy {
@@ -1179,7 +1182,7 @@ input[type="range"] {
 }
 
 .transferPopupTitle {
-  font-family: Inter;
+  font-family: Montserrat;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 18px;
@@ -1190,7 +1193,7 @@ input[type="range"] {
 }
 
 .transferPopupNormalText {
-  font-family: Inter;
+  font-family: Montserrat;
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
@@ -1229,7 +1232,7 @@ input[type="range"] {
   background: #121212;
   border: none;
   border-radius: 50px;
-  font-family: 'neue-haas-grotesk-display';
+  font-family: Montserrat;
   text-transform: uppercase;
   font-weight: 450;
   font-size: 16px;
@@ -1379,36 +1382,53 @@ input[type="range"] {
 
 
 #nftBuyButton {
-  background: url('./assets/buy.svg') no-repeat;
-  width: 130px;
-  height: 37px;
-  /*background-repeat: no-repeat;*/
+  width: 99px;
+  height: 36px;
   border: none;
   color: white;
-  background-color: none;
-  border-radius: 2px;
+  background-color: transparent;
+  border: 2px solid #F2F2F2;
+  border-radius: 100px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: #FFFFFF;
   margin-left: var(--spacing-3);
 }
 
 #nftBuyButton:hover {
-  background: url('./assets/buyHover.svg') no-repeat;
+  background: #F2F2F2;
+  border: 1px solid #F2F2F2;
+  color: #333333;
   cursor: pointer;
 }
 
 #transferButton {
-  background: url('./assets/transfer.svg') no-repeat;
-  width: 160px;
-  height: 37px;
+  width: 153px;
+  height: 36px;
   /*background-repeat: no-repeat;*/
   border: none;
   color: white;
-  background-color: none;
-  border-radius: 2px;
+  background-color: transparent;
+  border: 2px solid #F2F2F2;
+  border-radius: 100px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: #FFFFFF;
   margin-left: var(--spacing-3);
 }
 
 #transferButton:hover {
-  background: url('./assets/transferHover.svg') no-repeat;
+  background: #F2F2F2;
+  border: 1px solid #F2F2F2;
+  color: #333333;
   cursor: pointer;
 }
 

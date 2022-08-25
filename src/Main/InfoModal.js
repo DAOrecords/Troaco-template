@@ -175,7 +175,7 @@ export default function InfoModal({id, metadata, newAction, setOpenModal}) {
               }
             </div>
             <div id="troacoModalButtons">
-              <button onClick={() => setTransferInputOpen(true)} id="transferButton"></button>
+              <button onClick={() => setTransferInputOpen(true)} id="transferButton">Transfer</button>
             </div>
 
             <button id="troacoModalClose" onClick={() => setOpenModal(false)}>
