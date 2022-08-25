@@ -8,7 +8,7 @@ import Landing from './Landing';
 import Logo from './Logo';
 import BottomMenu from './BottomMenu';
 import MyNFTs from './MyNFTs';
-import globeBg from '../assets/globe_bg.jpg';
+import backgroundVid from '../assets/metajax_bg.mp4';
 import GuestBook from './GuestBook';
 
 
@@ -18,12 +18,6 @@ export default function Troaco({newAction, openGuestBook, setGuestBook, setShowW
   const [myNftList, setMyNftList] = React.useState([]);
   const screenWidth = window.innerWidth;
 
-  const bgStyle = {
-    backgroundImage: `url(${globeBg})`,
-    backgroundSize: "auto",
-    backgroundPosition: "center",
-    backgroundRepeat: "repeat-x",
-  }
 
   React.useEffect(async () => {    
     const urlParams = window.location.search;
@@ -57,10 +51,13 @@ export default function Troaco({newAction, openGuestBook, setGuestBook, setShowW
     <>
       {openGuestBook && ( <GuestBook openModal={openGuestBook} newAction={newAction} setOpenModal={setGuestBook} /> )}
       <ToastContainer position="bottom-right" autoClose={5000} />
+        <video id="backgroundVideo" autoPlay loop muted>
+            <source src={backgroundVid} type="video/mp4" />
+        </video>
         <TopMenu setShowWallet={setShowWallet} showWallet={showWallet} setGuestBook={setGuestBook} />
         <Logo />
 
-        <main style={bgStyle}>
+        <main>
           {isMyNfts ? 
             <MyNFTs newAction={newAction} nftList={myNftList} selected={selected} setSelected={setSelected} />
           : 
