@@ -10,6 +10,7 @@ import BottomMenu from './BottomMenu';
 import MyNFTs from './MyNFTs';
 import backgroundVid from '../assets/metajax_bg.mp4';
 import GuestBook from './GuestBook';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 
 export default function Troaco({newAction, openGuestBook, setGuestBook, setShowWallet, showWallet, isMyNfts}) {
@@ -17,15 +18,17 @@ export default function Troaco({newAction, openGuestBook, setGuestBook, setShowW
   const [nftList, setNftList] = React.useState([]); 
   const [myNftList, setMyNftList] = React.useState([]);
   const screenWidth = window.innerWidth;
-
+  const navigate = useNavigate();
 
   React.useEffect(async () => {    
     const urlParams = window.location.search;
     if (urlParams.includes('errorCode')) {
+      const urlObj = new URLSearchParams(document.location.search);
       newAction({
-        errorMsg: "There was an error while processing the transaction!", errorMsgDesc: URLSearchParams.get('errorCode'),
+        errorMsg: "There was an error while processing the transaction!", errorMsgDesc: urlObj.get('errorCode'),
       }); 
     } else if (urlParams.includes('transactionHashes')) {
+      navigate('/mynfts');
       newAction({
         successMsg: "Success!", successMsgDesc: "You bought a new NFT!",
       });
