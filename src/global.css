@@ -997,6 +997,7 @@ input[type="range"] {
 #troacoModalGuestbookCurrentAccount {
   background: rgba(217, 217, 217, 0.1);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-radius: 10px;
   padding: 16px;
   font-family: Montserrat;
@@ -1273,8 +1274,10 @@ input[type="range"] {
 }
 
 #guestbookMessages {
+  /*background: url('./assets/blurSvgBackground.svg');*/
   background: rgba(217, 217, 217, 0.1);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-radius: 10px;
   padding: 16px;
   height: 400px;
@@ -1286,6 +1289,7 @@ input[type="range"] {
 #guestbookInput {
   background: rgba(217, 217, 217, 0.1);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-radius: 10px;
   border: none;
   padding: 16px;
