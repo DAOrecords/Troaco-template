@@ -23,8 +23,8 @@
 
   /* Scrollbar */
   --scrollbar-track-color: transparent;
-  --scrollbar-thumb-color: #FF0000;
-  --scrollbar-hover-color: #FF00FF;
+  --scrollbar-thumb-color: #F2F2F2;
+  --scrollbar-hover-color: #FFFFFF;
 }
 
 @font-face {
@@ -431,48 +431,67 @@ main {
 }
 
 .troacoWalletBadge {
-  background: url('./assets/connect_frame_white.svg') no-repeat;
+  background: transparent;
+  font-family: Montserrat;
+  line-height: 20px;
+  font-weight: 500;
   text-transform: uppercase;
-  color: #F2F2F2;
-  font-family: VCR;
+  color: #FFFFFF;  
   font-size: 16px;
-  width: 179px;
-  height: 39px;
+  width: 219px;
+  height: 36px;
   margin-right: 32px;
-  border: none;
+  border: 2px solid #F2F2F2;
+  border-radius: 100px;
 }
 
 .troacoWalletBadge:hover {
-  font-weight: bold;
+  background: #F2F2F2;
+  border: 1px solid #F2F2F2;
+  color: #333333;
 }
 
 .troacoWalletContainer {
   position: absolute;
-  background: url('./assets/connect_frame_white.svg') no-repeat;
-  font-family: IBM;
-  color: #F2F2F2;
-  font-size: 10px;
+  font-family: Montserrat;
+  color: #FFFFFF;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
   top: 45px;
-  width: 159px;
-  height: 84px;
-  padding: 8px;
+  width: calc(217px - 2*24px);
+  height: calc(136px - 2*24px);
+  padding: 24px;
   text-transform: uppercase;
   background: transparent;
   border: 2px solid #F2F2F2;
-  border-radius: 7px;
+  border-radius: 20px;
   right: var(--spacing-3);
   z-index: 9998;
 }
 
 #troacoDisconnect {
-  background: url('./assets/disconnect_white.svg') no-repeat;
-  width: 84px;
-  height: 28px;
-  border: none;
+  background: transparent;
+  width: 131px;
+  height: 23px;
+  border: 2px solid #F2F2F2;
+  border-radius: 100px;
+  font-family: Montserrat;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
 }
 
 #troacoDisconnect:hover {
-  background: url('./assets/disconnect_hover_white.svg') no-repeat;
+  background: #F2F2F2;
+  border: 1px solid #F2F2F2;
+  color: #333333;
 }
 
 #troacoWalletBalanceFlex {
@@ -922,6 +941,7 @@ input[type="range"] {
   -webkit-backdrop-filter: blur(10px);
   border-radius: 10px;
   padding-left: var(--spacing-1);
+  padding-right: 8px;
   display: flex;
   flex-direction: column;
 }
@@ -1030,6 +1050,7 @@ input[type="range"] {
   scrollbar-color: var(--scrollbar-thumb-color) var(--scrollbar-track-color);
   /* Firefox scrollbar styling is different*/
   padding-left: 0;
+  padding-right: 0px;
 }
 
 .troacoModalSmallGlass {
@@ -1113,10 +1134,9 @@ input[type="range"] {
   margin-left: 8px;
 }
 
-/*SCROLLBAR EXPERIMENT*/
+/* Scrollbar */
 #troacoModalListContainer::-webkit-scrollbar {
-  /* scrollbar width */
-  width: 7px;
+  width: 7px;                                                                                                   /* scrollbar width */
 }
 #troacoModalListContainer::-webkit-scrollbar-track {
   background: var(--scrollbar-track-color);                                                                     /* scrollbar Track */
@@ -1133,7 +1153,7 @@ input[type="range"] {
 #troacoModalListContainer::-webkit-scrollbar-thumb:hover {
   background: var(--scrollbar-hover-color);                                                                     /* scrollbar Handle on hover */
 }
-/*END of EXPERIMENT*/
+/* Scrollbar*/
 
 #transferPopupWrapper {
   position: absolute;
@@ -1276,34 +1296,26 @@ input[type="range"] {
   color: #F2F2F2;
 }
 
-/*SCROLLBAR EXPERIMENT*/
-
+/* Scrollbar */
 #guestbookMessages::-webkit-scrollbar {
-  /* scrollbar width */
-  width: 1px;
-  color: #FFFFFF;
+  width: 7px;                                                                                                   /* scrollbar width */
 }
-
 #guestbookMessages::-webkit-scrollbar-track {
-  /* scrollbar Track */
-  background: #FFFFFF;
+  background: var(--scrollbar-track-color);                                                                     /* scrollbar Track */
+  background: -webkit-linear-gradient(to right, var(--scrollbar-track-color), var(--scrollbar-track-color));    /* fallback for old browsers */
+  background: linear-gradient(to right, var(--scrollbar-track-color), var(--scrollbar-track-color));            /* Chrome 10-25, Safari 5.1-6 */
+  border-radius: 10px;                                                                                          /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-
 #guestbookMessages::-webkit-scrollbar-thumb {
-  /* scrollbar Handle */
-  background: #FF0000;
-  /* fallback for old browsers */
-  border-radius: 10px;
-  border-radius: 10px;
-  --webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+  background: var(--scrollbar-thumb-color);                                                                     /* scrollbar Handle */
+  background: -webkit-linear-gradient(to right, var(--scrollbar-thumb-color), var(--scrollbar-thumb-color));    /* fallback for old browsers */
+  background: linear-gradient(to right, var(--scrollbar-thumb-color), var(--scrollbar-thumb-color));            /* Chrome 10-25, Safari 5.1-6 */
+  border-radius: 10px;                                                                                          /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-
 #guestbookMessages::-webkit-scrollbar-thumb:hover {
-  /* scrollbar Handle on hover */
-  background: var(--scrollbar-hover-color);
+  background: var(--scrollbar-hover-color);                                                                     /* scrollbar Handle on hover */
 }
-
-/*END of EXPERIMENT*/
+/* Scrollbar */
 
 .guestbookMessage {
   display: flex;

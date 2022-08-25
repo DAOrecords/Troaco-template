@@ -53,16 +53,15 @@ export default function Wallet({setShowWallet, showWallet}) {
           <div id="wallet" className="troacoWalletContainer">
             <div id="troacoWalletBalanceFlex">
               <p>BALANCE</p>
-              <img id="troacoWalletNearLogo" src={nearLogo} alt='N' />
               <p className="walletFlexPlaceholder"></p>
-              <p>{formatNumber(balance, 3)}</p>
+              <p>{formatNumber(balance, 2)} N</p>
             </div>            
             <div id="troacoWalletDollarFlex">
               <p className="walletFlexPlaceholder"></p>
               <p>~ ${formatNumber(dollar, 2)}</p>
             </div>
             <div id="troacoWalletButtonContainer">
-              <button onClick={disconnectClicked} id="troacoDisconnect"></button>
+              <button onClick={disconnectClicked} id="troacoDisconnect">Disconnect</button>
             </div>
           </div>
         )}
