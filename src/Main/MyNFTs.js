@@ -161,7 +161,7 @@ export default function Landing({selected, setSelected, nftList, newAction}) {
           </ul>
         </Draggable>
       :
-        <h1 className="troacoModalBigText" style={{marginTop: "20vh"}}>You don't have any NFTs yet.</h1>
+        <h1 className="troacoModalBigText" style={{marginTop: "50vh"}}>You don't have any NFTs yet.</h1>
       }
 
       <Arrows selected={selected} setSelected={setSelected} max={nftList.length-1} />

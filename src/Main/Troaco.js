@@ -47,8 +47,6 @@ export default function Troaco({newAction, openGuestBook, setGuestBook, setShowW
     setMyNftList(listForLoggedInUser);
   }, [])
 
-  if (nftList.length === 0) return <p>Loading...</p>
-
   
   return (
     <>
