@@ -20,6 +20,11 @@
   --toastify-text-color-light: #ffffff;
   --toastify-text-color-dark: #000000;
   --splash-color: #121212;
+
+  /* Scrollbar */
+  --scrollbar-track-color: transparent;
+  --scrollbar-thumb-color: #FF0000;
+  --scrollbar-hover-color: #FF00FF;
 }
 
 @font-face {
@@ -1022,7 +1027,7 @@ input[type="range"] {
   height: 37vh;
   overflow-y: scroll;
   overflow-x: hidden;
-  scrollbar-color: #128612 #004E00;
+  scrollbar-color: var(--scrollbar-thumb-color) var(--scrollbar-track-color);
   /* Firefox scrollbar styling is different*/
   padding-left: 0;
 }
@@ -1109,39 +1114,25 @@ input[type="range"] {
 }
 
 /*SCROLLBAR EXPERIMENT*/
-
 #troacoModalListContainer::-webkit-scrollbar {
   /* scrollbar width */
   width: 7px;
 }
-
 #troacoModalListContainer::-webkit-scrollbar-track {
-  /* scrollbar Track */
-  background: #C9D6FF;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #E2E2E2, #C9D6FF);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #E2E2E2, #C9D6FF);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  border-radius: 10px;
+  background: var(--scrollbar-track-color);                                                                     /* scrollbar Track */
+  background: -webkit-linear-gradient(to right, var(--scrollbar-track-color), var(--scrollbar-track-color));    /* fallback for old browsers */
+  background: linear-gradient(to right, var(--scrollbar-track-color), var(--scrollbar-track-color));            /* Chrome 10-25, Safari 5.1-6 */
+  border-radius: 10px;                                                                                          /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-
 ::-webkit-scrollbar-thumb {
-  /* scrollbar Handle */
-  background: #ee0979;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #333333, #555555);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #333333, #555555);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  border-radius: 10px;
+  background: var(--scrollbar-thumb-color);                                                                     /* scrollbar Handle */
+  background: -webkit-linear-gradient(to right, var(--scrollbar-thumb-color), var(--scrollbar-thumb-color));    /* fallback for old browsers */
+  background: linear-gradient(to right, var(--scrollbar-thumb-color), var(--scrollbar-thumb-color));            /* Chrome 10-25, Safari 5.1-6 */
+  border-radius: 10px;                                                                                          /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-
 #troacoModalListContainer::-webkit-scrollbar-thumb:hover {
-  /* scrollbar Handle on hover */
-  background: purple;
+  background: var(--scrollbar-hover-color);                                                                     /* scrollbar Handle on hover */
 }
-
 /*END of EXPERIMENT*/
 
 #transferPopupWrapper {
@@ -1309,7 +1300,7 @@ input[type="range"] {
 
 #guestbookMessages::-webkit-scrollbar-thumb:hover {
   /* scrollbar Handle on hover */
-  background: purple;
+  background: var(--scrollbar-hover-color);
 }
 
 /*END of EXPERIMENT*/
