@@ -1275,7 +1275,7 @@ input[type="range"] {
 
 #guestbookMessages {
   /*background: url('./assets/blurSvgBackground.svg');*/
-  background: rgba(217, 217, 217, 0.1);
+  background: #333333;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 10px;
