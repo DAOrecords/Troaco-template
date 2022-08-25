@@ -134,10 +134,10 @@ nav {
 
 #troacoSongMenu {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap-reverse;
   width: 100%;
   list-style-type: none;
-  justify-content: space-between;
+  justify-content: flex-start;
   font-family: Montserrat;
   font-style: normal;
   font-weight: 500;
@@ -149,6 +149,7 @@ nav {
 }
 #troacoSongMenu li {
   margin-bottom: 23px;
+  margin-right: 32px;
 }
 
 .troacoSongSelected {
