@@ -10,7 +10,7 @@ export default function GuestBook({newAction, setOpenModal}) {
   
   useEffect(async () => {
     const fetchedEntries = await getGuestBookEntries();
-    setEntries(fetchedEntries);
+    setEntries(mockEntries);
   }, [])
   
   function inputHandler(newText) {
@@ -68,7 +68,7 @@ export default function GuestBook({newAction, setOpenModal}) {
 
           <div id="troacoModalRightSide" className="troacoModalGuestbookRightSide">
             <div id="troacoModalGuestbookCurrentAccount">
-              {window.accountId}
+              {window.accountId ? window.accountId : "(you are not logged in)"}
             </div>
             <textarea onChange={(e) => inputHandler(e.target.value)} placeholder={"Type here..."} value={text} id="guestbookInput" >
             </textarea>
@@ -92,6 +92,21 @@ export default function GuestBook({newAction, setOpenModal}) {
 
 
 const mockEntries = [
+  {
+    sender: "lelen.near",
+    date: new Date(2022, 5, 22, 5, 42).toDateString(),
+    message: "Hi"
+  },
+  {
+    sender: "optr.near",
+    date: new Date(2022, 6, 22, 6, 38).toDateString(),
+    message: "Szia"
+  },
+  {
+    sender: "vandal.near",
+    date: new Date(2022, 5, 24, 2, 55).toDateString(),
+    message: "Hello"
+  },  
   {
     sender: "lelen.near",
     date: new Date(2022, 5, 22, 5, 42).toDateString(),

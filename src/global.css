@@ -912,12 +912,13 @@ input[type="range"] {
 #troacoModalContent {
   grid-area: content;
   padding: var(--spacing-3);
+  height: max-content;
   display: grid;
   grid-auto-columns: 1fr 1fr auto;
   grid-auto-rows: min-content;
   grid-auto-flow: column;
   grid-template-areas: 'picture right close'
-  'audio buttons close';
+                       'audio buttons close';
 }
 
 #troacoModalPicture {
@@ -998,7 +999,7 @@ input[type="range"] {
   backdrop-filter: blur(10px);
   border-radius: 10px;
   padding: 16px;
-  font-family: VCR;
+  font-family: Montserrat;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -1279,7 +1280,7 @@ input[type="range"] {
   height: 400px;
   overflow-x: hidden;
   overflow-y: scroll;
-  height: 92%;
+  scrollbar-color: var(--scrollbar-thumb-color) var(--scrollbar-track-color);
 }
 
 #guestbookInput {
@@ -1290,7 +1291,7 @@ input[type="range"] {
   padding: 16px;
   margin-top: 20px;
   height: 100%;
-  font-family: Inter;
+  font-family: Montserrat;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -1326,7 +1327,7 @@ input[type="range"] {
 }
 
 .guestbookMessageSender {
-  font-family: VCR;
+  font-family: Montserrat;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -1338,7 +1339,7 @@ input[type="range"] {
 }
 
 .guestbookMessageTime {
-  font-family: 'Inter';
+  font-family: Montserrat;
   font-style: normal;
   font-weight: 400;
   font-size: 10px;
