@@ -154,11 +154,11 @@ export default function Landing({selected, setSelected, mobileView, nftList, new
         <h1 className="troacoModalBigText" style={{marginTop: "50vh"}}>Loading NFTs ...</h1>
       ) : (
         <Draggable axis={"x"} defaultPosition={{x: 500, y: 0}} position={pos}
-          onStart={eventHandler} onDrag={eventHandler} onStop={eventHandler} >
+          onStart={eventHandler} onDrag={eventHandler} onStop={eventHandler} cancel=".btn"  >
             <ul style={isBeingMoved ? {...ulStyleTemp, ...transitionStyleTemp} : ulStyleTemp}>
               {nftList.map((nft, i) => {
                 return (
-                  <li style={i === selected ? {...liStyleTemp, ...liStyleSelectedTemp} : liStyleTemp} onMouseDown={() => bubbleClickHandler(i)} key={i} prop>
+                  <li style={i === selected ? {...liStyleTemp, ...liStyleSelectedTemp} : liStyleTemp} onMouseDown={() => bubbleClickHandler(i)} key={i} prop className="btn">
                     <div style={i === selected ? {...bubbleStyleTemp, ...bubbleStyleSelectedTemp} : bubbleStyleTemp}>
                       {nft.metadata.title}
                     </div>
