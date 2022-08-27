@@ -14,6 +14,7 @@ export default function Landing({selected, setSelected, mobileView, nftList, new
   const [pos, setPos] = useState({x: (multiplier*listElementWidth) -bigMargin, y: 0});
   const [candidate, setCandidate] = useState(null);       // This might be the next centered element
   const [startPos, setStartPos] = useState(null);         // The starting X position of mouse when the dragging is started
+  const [lastTouch, setLastTouch] = useState(null);       // The last X position from touch event, there is no clientX at 'touchend'!
   const [isBeingMoved, setIsBeingMoved] = useState(true);
   const [openModal, setOpenModal] = useState(false);
   
@@ -102,17 +103,33 @@ export default function Landing({selected, setSelected, mobileView, nftList, new
   
 
   function eventHandler(e) {
-    if (e.type === "mousedown") {
+    console.log("EVENT TYPE: ", e.type);
+    console.log("selected: ",  selected);
+    console.log("candidate:", candidate);
+    if (e.type === "mousedown" || e.type === "touchstart") {
+      console.log("e.touches", e.touches);
       setIsBeingMoved(false);
-      setStartPos(e.clientX);
+      if (e.type === "mousedown") setStartPos(e.clientX);
+      else setStartPos(e.touches[0].clientX);
       return;
     }
 
-    if (e.type === "mouseup") {
+    if (e.type === "touchmove") {
+      setLastTouch(e.touches[0].clientX);
+    }
+
+    if (e.type === "mouseup" || e.type === "touchend") {
       setIsBeingMoved(true);
       const threshold = 0.10;
       const lastItem = 12+1;
-      let deltaX = e.clientX - startPos;
+      let deltaX = 0;
+      if (e.type === "mouseup") {
+        deltaX = e.clientX - startPos;
+      } else {
+        deltaX = lastTouch - startPos;
+      }
+      console.log("e.touches", e.touches);
+      console.log(`${e.clientX} - ${startPos}`)
       console.log("deltaX: ", deltaX);
 
       if ((Math.abs(deltaX)/listElementWidth) < threshold) {                                  // If below threshold (it was clicked, not dragged)
@@ -154,11 +171,16 @@ export default function Landing({selected, setSelected, mobileView, nftList, new
         <h1 className="troacoModalBigText" style={{marginTop: "50vh"}}>Loading NFTs ...</h1>
       ) : (
         <Draggable axis={"x"} defaultPosition={{x: 500, y: 0}} position={pos}
-          onStart={eventHandler} onDrag={eventHandler} onStop={eventHandler} cancel=".btn"  >
+          onStart={eventHandler} onDrag={eventHandler} onStop={eventHandler} cancel=".cancel"  >
             <ul style={isBeingMoved ? {...ulStyleTemp, ...transitionStyleTemp} : ulStyleTemp}>
               {nftList.map((nft, i) => {
                 return (
-                  <li style={i === selected ? {...liStyleTemp, ...liStyleSelectedTemp} : liStyleTemp} onMouseDown={() => bubbleClickHandler(i)} key={i} prop className="btn">
+                  <li style={i === selected ? {...liStyleTemp, ...liStyleSelectedTemp} : liStyleTemp} 
+                      onMouseDown={() => bubbleClickHandler(i)} 
+                      onTouchStart={() => bubbleClickHandler(i)}
+                      key={i} prop 
+                      className={i === selected ? "cancel" : null}
+                  >
                     <div style={i === selected ? {...bubbleStyleTemp, ...bubbleStyleSelectedTemp} : bubbleStyleTemp}>
                       {nft.metadata.title}
                     </div>

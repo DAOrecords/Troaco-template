@@ -17,7 +17,7 @@ export default function Troaco({newAction, openGuestBook, setGuestBook, setShowW
   const [selected, setSelected] = useState(0);
   const [nftList, setNftList] = React.useState([]); 
   const [myNftList, setMyNftList] = React.useState([]);
-  const mobileView = window.innerWidth < 1100;
+  const mobileView = window.innerWidth < 1200;
   const navigate = useNavigate();
 
   React.useEffect(async () => {    
