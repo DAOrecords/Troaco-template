@@ -60,7 +60,7 @@ export default function Troaco({newAction, openGuestBook, setGuestBook, setShowW
 
         <main>
           {isMyNfts ? 
-            <MyNFTs newAction={newAction} nftList={myNftList} mobileView={mobileView} selected={selected} setSelected={setSelected} />
+            <MyNFTs newAction={newAction} nftList={   nftList} mobileView={mobileView} selected={selected} setSelected={setSelected} />
           : 
             <Landing newAction={newAction} nftList={nftList} mobileView={mobileView} selected={selected} setSelected={setSelected} />
           }

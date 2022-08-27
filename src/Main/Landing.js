@@ -104,11 +104,7 @@ export default function Landing({selected, setSelected, mobileView, nftList, new
   
 
   function eventHandler(e) {
-    console.log("EVENT TYPE: ", e.type);
-    console.log("selected: ",  selected);
-    console.log("candidate:", candidate);
     if (e.type === "mousedown" || e.type === "touchstart") {
-      console.log("e.touches", e.touches);
       setIsBeingMoved(false);
       if (e.type === "mousedown") setStartPos(e.clientX);
       else setStartPos(e.touches[0].clientX);

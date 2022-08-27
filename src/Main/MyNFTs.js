@@ -5,14 +5,16 @@ import InfoModal from './InfoModal';
 import SongNavigation from './SongNavigation';
 
 
-export default function Landing({selected, setSelected, nftList, newAction}) {
-  const listElementWidth = window.innerWidth / 7;
-  const bigMargin = 110;
+export default function Landing({selected, setSelected, mobileView, nftList, newAction}) {
+  const listElementWidth = mobileView ? ( window.innerWidth / 3 ) : ( window.innerWidth / 7 );
+  const multiplier = mobileView ? ( 1 ) : ( 3 );
+  const bigMargin = mobileView ? ( 40 ) : ( 110 );
   const magicNumber = 0.19140936538680642;
   
-  const [pos, setPos] = useState({x: (3*listElementWidth) -bigMargin, y: 0});
+  const [pos, setPos] = useState({x: (multiplier*listElementWidth) -bigMargin, y: 0});
   const [candidate, setCandidate] = useState(null);       // This might be the next centered element
   const [startPos, setStartPos] = useState(null);         // The starting X position of mouse when the dragging is started
+  const [lastTouch, setLastTouch] = useState(null);       // The last X position from touch event, there is no clientX at 'touchend'!
   const [isBeingMoved, setIsBeingMoved] = useState(true);
   const [openModal, setOpenModal] = useState(false);
 
@@ -28,7 +30,7 @@ export default function Landing({selected, setSelected, nftList, newAction}) {
     listStyleType: "none",
     display: "flex",
     alignItems: "center",
-    height: "100vh",
+    height: mobileView ? ( "72vh" ) : ( "100vh" ),
     width: "max-content",
     margin: "0",
     padding: "0",
@@ -48,7 +50,7 @@ export default function Landing({selected, setSelected, nftList, newAction}) {
   }
 
   const liStyleSelectedTemp = {
-    marginLeft: `${bigMargin}px`,
+    marginLeft: mobileView ? ( `${bigMargin*1.5}px` ) : ( `${bigMargin}px` ),
     marginRight: `${bigMargin}px`,
     marginTop: `${-listElementWidth/2}px`,
     transition: "margin 0.3s ease-in",       // create space for the bubble animation
@@ -63,7 +65,7 @@ export default function Landing({selected, setSelected, nftList, newAction}) {
     caretColor: "transparent",
     color: "#BDBDBD",
     fontWeight: 500,
-    fontSize: "12px",
+    fontSize: mobileView ? ( "8px" ) : ( "12px" ),
     lineHeight: "15px",
     letterSpacing: "0.01em",
     borderRadius: "500px",
@@ -71,6 +73,7 @@ export default function Landing({selected, setSelected, nftList, newAction}) {
     width: "80%",
     display: "flex",
     alignItems: "center",
+    textAlign: "center",
     justifyItems: "center",
     justifyContent: "center",
     transition: "width 0.3s, height 0.3s, transform 0.3s",         // bubble grow back animation
@@ -78,7 +81,7 @@ export default function Landing({selected, setSelected, nftList, newAction}) {
 
   const bubbleStyleSelectedTemp = {
     color: "#F2F2F2",
-    fontSize: "24px",
+    fontSize: mobileView ? ( "16px" ) : ( "24px" ),
     lineHeight: "29px",
     width: "160%",
     height: "160%",
@@ -89,34 +92,43 @@ export default function Landing({selected, setSelected, nftList, newAction}) {
 
   useEffect(() => {
     setPos(() => ({
-      x: (3*listElementWidth) - (selected*listElementWidth) - bigMargin, 
+      x: (multiplier*listElementWidth) - (selected*listElementWidth) - bigMargin, 
       y: 0
     }));
     setOpenModal(false);
   
     return () => {
-      setPos(({x: (3*listElementWidth) -bigMargin, y: 0}));
+      setPos(({x: (multiplier*listElementWidth) -bigMargin, y: 0}));
     }
   }, [selected]);
   
 
   function eventHandler(e) {
-    if (e.type === "mousedown") {
+    if (e.type === "mousedown" || e.type === "touchstart") {
       setIsBeingMoved(false);
-      setStartPos(e.clientX);
+      if (e.type === "mousedown") setStartPos(e.clientX);
+      else setStartPos(e.touches[0].clientX);
       return;
     }
 
-    if (e.type === "mouseup") {
+    if (e.type === "touchmove") {
+      setLastTouch(e.touches[0].clientX);
+    }
+
+    if (e.type === "mouseup" || e.type === "touchend") {
       setIsBeingMoved(true);
       const threshold = 0.10;
       const lastItem = nftList.length-1;
-      console.log("lastItem: ", lastItem);
-      let deltaX = e.clientX - startPos;
+      let deltaX = 0;
+      if (e.type === "mouseup") {
+        deltaX = e.clientX - startPos;
+      } else {
+        deltaX = lastTouch - startPos;
+      }
 
       if ((Math.abs(deltaX)/listElementWidth) < threshold) {                                  // If below threshold (it was clicked, not dragged)
         setPos(() => ({
-            x: (3*listElementWidth) - (candidate*listElementWidth) - bigMargin, 
+            x: (multiplier*listElementWidth) - (candidate*listElementWidth) - bigMargin, 
             y: 0
           }));
         setSelected(candidate);
@@ -147,11 +159,16 @@ export default function Landing({selected, setSelected, nftList, newAction}) {
     <div style={containerStyleTemp}> 
       {(nftList.length > 0) ? 
         <Draggable axis={"x"} defaultPosition={{x: 500, y: 0}} position={pos}
-          onStart={eventHandler} onDrag={eventHandler} onStop={eventHandler} >
+        onStart={eventHandler} onDrag={eventHandler} onStop={eventHandler} cancel=".cancel"  >
           <ul style={isBeingMoved ? {...ulStyleTemp, ...transitionStyleTemp} : ulStyleTemp}>
             {nftList.map((nft, i) => {
               return (
-                <li style={i === selected ? {...liStyleTemp, ...liStyleSelectedTemp} : liStyleTemp} onMouseDown={() => bubbleClickHandler(i)} key={i} prop>
+                <li style={i === selected ? {...liStyleTemp, ...liStyleSelectedTemp} : liStyleTemp} 
+                      onMouseDown={() => bubbleClickHandler(i)} 
+                      onTouchStart={() => bubbleClickHandler(i)}
+                      key={i} prop 
+                      className={i === selected ? "cancel" : null}
+                  >
                   <div style={i === selected ? {...bubbleStyleTemp, ...bubbleStyleSelectedTemp} : bubbleStyleTemp}>
                     {nft.metadata.title}
                   </div>
