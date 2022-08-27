@@ -24,7 +24,7 @@ export default function Arrows({selected, setSelected, mobileView, max}) {
 
   const leftStyle = {
     position: "absolute",
-    zIndex: "5",
+    zIndex: "1",
     background: "transparent",
     border: "none",
     top: mobileView ? ( "16%" ) : ( "25%" ),
@@ -33,7 +33,7 @@ export default function Arrows({selected, setSelected, mobileView, max}) {
 
   const rightStyle = {
     position: "absolute",
-    zIndex: "5",
+    zIndex: "1",
     background: "transparent",
     border: "none",
     top: mobileView ? ( "16%" ) : ( "25%" ),

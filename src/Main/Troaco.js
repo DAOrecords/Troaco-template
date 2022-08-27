@@ -55,7 +55,7 @@ export default function Troaco({newAction, openGuestBook, setGuestBook, setShowW
         <video id="backgroundVideo" autoPlay loop muted>
             <source src={backgroundVid} type="video/mp4" />
         </video>
-        <TopMenu setShowWallet={setShowWallet} showWallet={showWallet} setGuestBook={setGuestBook} />
+        <TopMenu mobileView={mobileView} setShowWallet={setShowWallet} showWallet={showWallet} setGuestBook={setGuestBook} />
         {!mobileView ?? <Logo />}
 
         <main>
