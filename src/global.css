@@ -351,8 +351,9 @@ nav {
 }
 
 #dropdownContainer a {
-  font-family: Inter;
+  font-family: Montserrat;
   text-transform: uppercase;
+  text-decoration: none;
   color: #333333;
   width: 180px;
   padding: 10px;

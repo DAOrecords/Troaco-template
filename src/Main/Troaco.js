@@ -56,7 +56,7 @@ export default function Troaco({newAction, openGuestBook, setGuestBook, setShowW
             <source src={backgroundVid} type="video/mp4" />
         </video>
         <TopMenu mobileView={mobileView} setShowWallet={setShowWallet} showWallet={showWallet} setGuestBook={setGuestBook} />
-        {!mobileView ?? <Logo />}
+        {!mobileView && <Logo />}
 
         <main>
           {isMyNfts ? 

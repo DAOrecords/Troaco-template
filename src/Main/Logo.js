@@ -4,8 +4,6 @@ import logo from '../assets/ArturoLogo.png';
 
 
 export default function Logo() {
-  const logoPixel = 30;
-
   const logoStyle = {
     position: "absolute",
     zIndex: "500",
