@@ -66,7 +66,7 @@ export default function Landing({selected, setSelected, mobileView, nftList, new
     caretColor: "transparent",
     color: "#BDBDBD",
     fontWeight: 500,
-    fontSize: "12px",
+    fontSize: mobileView ? ( "8px" ) : ( "12px" ),
     lineHeight: "15px",
     letterSpacing: "0.01em",
     borderRadius: "500px",
@@ -74,6 +74,7 @@ export default function Landing({selected, setSelected, mobileView, nftList, new
     width: "80%",
     display: "flex",
     alignItems: "center",
+    textAlign: "center",
     justifyItems: "center",
     justifyContent: "center",
     transition: "width 0.3s, height 0.3s, transform 0.3s",         // bubble grow back animation
@@ -81,7 +82,7 @@ export default function Landing({selected, setSelected, mobileView, nftList, new
 
   const bubbleStyleSelectedTemp = {
     color: "#F2F2F2",
-    fontSize: "24px",
+    fontSize: mobileView ? ( "16px" ) : ( "24px" ),
     lineHeight: "29px",
     width: "160%",
     height: "160%",

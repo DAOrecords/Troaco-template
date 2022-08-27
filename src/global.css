@@ -117,6 +117,7 @@ nav {
 
 .mobileDropdownContainer {
   left: 0;
+  top: 45px !important;
   width: 100%;
   text-align: center;
 }
