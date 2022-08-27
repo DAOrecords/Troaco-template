@@ -932,8 +932,6 @@ input[type="range"] {
 .troacoModal {
   position: absolute;
   display: grid;
-  grid-template-areas: 'bar'
-    'content';
   width: 55vw;
   height: 72vh;
   top: calc(50vh - (72vh/2));
@@ -1294,6 +1292,23 @@ input[type="range"] {
   #transferPopupWrapper {
     height: 110vh;
     overflow: hidden;
+  }
+  .troacoModal {
+    width: 100vw;
+    top: 40px;
+    left: 0;
+    overflow-y: scroll;
+  }
+  #troacoModalContent {
+    padding: 0;
+    grid-auto-columns: 1fr auto;
+    grid-auto-rows: min-content;
+    grid-auto-flow: column;
+    grid-template-areas: 'close'
+                  'picture'
+                         'right'
+                         'audio'
+                         'buttons';
   }
 }
 
