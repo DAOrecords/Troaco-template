@@ -51,7 +51,7 @@ export default function Landing({selected, setSelected, mobileView, nftList, new
   }
 
   const liStyleSelectedTemp = {
-    marginLeft: `${bigMargin}px`,
+    marginLeft: mobileView ? ( `${bigMargin*1.5}px` ) : ( `${bigMargin}px` ),
     marginRight: `${bigMargin}px`,
     marginTop: `${-listElementWidth/2}px`,
     transition: "margin 0.3s ease-in",       // create space for the bubble animation
@@ -121,7 +121,7 @@ export default function Landing({selected, setSelected, mobileView, nftList, new
     if (e.type === "mouseup" || e.type === "touchend") {
       setIsBeingMoved(true);
       const threshold = 0.10;
-      const lastItem = 12+1;
+      const lastItem = 11;
       let deltaX = 0;
       if (e.type === "mouseup") {
         deltaX = e.clientX - startPos;
