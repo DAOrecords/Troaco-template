@@ -1309,7 +1309,7 @@ input[type="range"] {
     grid-auto-rows: min-content;
     grid-auto-flow: column;
     grid-template-areas: 'close'
-                  'picture'
+                         'picture'
                          'right'
                          'audio'
                          'buttons';
@@ -1338,6 +1338,9 @@ input[type="range"] {
   #troacoModalSwitchBox {
     width: 100%;
     align-self: center;
+    margin-top: 32px;
+  }
+  #troacoModalGuestbookCurrentAccount {
     margin-top: 32px;
   }
 }
