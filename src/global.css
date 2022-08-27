@@ -1290,12 +1290,13 @@ input[type="range"] {
   }
 
   #transferPopupWrapper {
-    height: 110vh;
     overflow: hidden;
+    background: rgba(17, 17, 17, 0.8);
   }
   .troacoModal {
     width: 100vw;
-    top: 40px;
+    height: 100vh;
+    top: 0;
     left: 0;
     overflow-y: scroll;
   }
@@ -1309,6 +1310,26 @@ input[type="range"] {
                          'right'
                          'audio'
                          'buttons';
+  }
+  #troacoModalClose {
+    width: 100%;
+    text-align: right;
+  }
+  #troacoModalPicture {
+    padding-left: 16vw;
+    padding-right: 16vw;
+    margin-bottom: 32px;
+    margin-top: 32px;
+  }
+  #troacoModalAudio {
+    padding-right: 0;
+  }
+  #troacoModalButtons {
+    text-align: center;
+    margin: 32px;
+  }
+  #modalMainButton {
+    margin-left: 0 !important;
   }
 }
 
