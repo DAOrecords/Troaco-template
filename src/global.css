@@ -232,6 +232,9 @@ nav {
     height: max-content;
     z-index: 1;
   }
+  #troacoSongMenu li {
+    margin-bottom: 12px;
+  }
   .controlsLast {
     margin-right: 16px;
   }
