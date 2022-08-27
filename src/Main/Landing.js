@@ -5,12 +5,13 @@ import BuyModal from './BuyModal';
 import SongNavigation from './SongNavigation';
 
 
-export default function Landing({selected, setSelected, nftList, newAction}) {
-  const listElementWidth = window.innerWidth / 7;
-  const bigMargin = 110;
+export default function Landing({selected, setSelected, mobileView, nftList, newAction}) {
+  const listElementWidth = mobileView ? ( window.innerWidth / 3 ) : ( window.innerWidth / 7 );
+  const multiplier = mobileView ? ( 1 ) : ( 3 );
+  const bigMargin = mobileView ? ( 40 ) : ( 110 );
   const magicNumber = 0.19140936538680642;
   
-  const [pos, setPos] = useState({x: (3*listElementWidth) -bigMargin, y: 0});
+  const [pos, setPos] = useState({x: (multiplier*listElementWidth) -bigMargin, y: 0});
   const [candidate, setCandidate] = useState(null);       // This might be the next centered element
   const [startPos, setStartPos] = useState(null);         // The starting X position of mouse when the dragging is started
   const [isBeingMoved, setIsBeingMoved] = useState(true);
@@ -90,12 +91,12 @@ export default function Landing({selected, setSelected, nftList, newAction}) {
 
   useEffect(() => {
     setPos(() => ({
-      x: (3*listElementWidth) - (selected*listElementWidth) - bigMargin, 
+      x: (multiplier*listElementWidth) - (selected*listElementWidth) - bigMargin, 
       y: 0
     }));
   
     return () => {
-      setPos(({x: (3*listElementWidth) -bigMargin, y: 0}));
+      setPos(({x: (multiplier*listElementWidth) -bigMargin, y: 0}));
     }
   }, [selected]);
   
@@ -117,7 +118,7 @@ export default function Landing({selected, setSelected, nftList, newAction}) {
       if ((Math.abs(deltaX)/listElementWidth) < threshold) {                                  // If below threshold (it was clicked, not dragged)
         console.log("event handler click case: ", candidate);
         setPos(() => ({
-            x: (3*listElementWidth) - (candidate*listElementWidth) - bigMargin, 
+            x: (multiplier*listElementWidth) - (candidate*listElementWidth) - bigMargin, 
             y: 0
           }));
         setSelected(candidate);
