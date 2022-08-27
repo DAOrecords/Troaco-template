@@ -71,7 +71,7 @@ export default function Troaco({newAction, openGuestBook, setGuestBook, setShowW
           setOpenModal={setGuestBook}
         />)}
 
-        <BottomMenu />
+        {!mobileView && <BottomMenu />}
     </>
   )
 }
