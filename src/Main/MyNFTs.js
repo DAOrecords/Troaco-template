@@ -30,7 +30,7 @@ export default function Landing({selected, setSelected, mobileView, nftList, new
     listStyleType: "none",
     display: "flex",
     alignItems: "center",
-    height: mobileView ? ( "72vh" ) : ( "100vh" ),
+    height: mobileView ? ( "80vh" ) : ( "100vh" ),
     width: "max-content",
     margin: "0",
     padding: "0",

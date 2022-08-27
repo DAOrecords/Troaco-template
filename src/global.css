@@ -1329,7 +1329,8 @@ input[type="range"] {
   }
   #troacoModalButtons {
     text-align: center;
-    margin: 32px;
+    margin-top: 32px;
+    margin-bottom: 64px;
   }
   #modalMainButton {
     margin-left: 0 !important;
