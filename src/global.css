@@ -1343,6 +1343,9 @@ input[type="range"] {
   #troacoModalGuestbookCurrentAccount {
     margin-top: 32px;
   }
+  .troacoWalletContainer {
+    background: #121212;
+  }
 }
 
 .scroll {
