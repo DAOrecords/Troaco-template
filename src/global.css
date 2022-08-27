@@ -1334,6 +1334,11 @@ input[type="range"] {
   #modalMainButton {
     margin-left: 0 !important;
   }
+  #troacoModalSwitchBox {
+    width: 100%;
+    align-self: center;
+    margin-top: 32px;
+  }
 }
 
 .scroll {
