@@ -31,7 +31,7 @@ export default function Landing({selected, setSelected, mobileView, nftList, new
     listStyleType: "none",
     display: "flex",
     alignItems: "center",
-    height: "100vh",
+    height: mobileView ? ( "72vh" ) : ( "100vh" ),
     width: "max-content",
     margin: "0",
     padding: "0",
@@ -191,7 +191,7 @@ export default function Landing({selected, setSelected, mobileView, nftList, new
         </Draggable>
       )}
 
-      <Arrows selected={selected} setSelected={setSelected} max={nftList.length-1} />
+      <Arrows selected={selected} setSelected={setSelected} mobileView={mobileView} max={nftList.length-1} />
 
       <SongNavigation nftList={nftList} selected={selected} setSelected={setSelected} />
 
