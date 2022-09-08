@@ -62,6 +62,7 @@ export default function Landing({selected, setSelected, mobileView, nftList, new
     fontFamily: 'VCR',
     fontStyle: "normal",
     textTransform: "uppercase",
+    caretColor: "transparent",
     color: "#E0E0E0",
     fontWeight: 400,
     fontSize: mobileView ? ( "8px" ) : ( "12px" ),
