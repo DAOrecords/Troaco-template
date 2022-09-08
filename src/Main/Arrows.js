@@ -3,7 +3,7 @@ import arrowLeft from '../assets/arrow_left.svg';
 import arrowRight from '../assets/arrow_right.svg';
 
 
-export default function Arrows({selected, setSelected, max}) {
+export default function Arrows({selected, setSelected, mobileView, max}) {
   function leftClicked(e) {
     e.stopPropagation();
     if (selected > 0) {
@@ -24,19 +24,19 @@ export default function Arrows({selected, setSelected, max}) {
 
   const leftStyle = {
     position: "absolute",
-    zIndex: "5",
+    zIndex: mobileView ? ( "1" ) : ( "5" ) ,
     background: "transparent",
     border: "none",
-    top: "25%",
+    top: mobileView ? ( "16%" ) : ( "25%" ),
     left: "3vw"
   }
 
   const rightStyle = {
     position: "absolute",
-    zIndex: "5",
+    zIndex: mobileView ? ( "1" ) : ( "5" ) ,
     background: "transparent",
     border: "none",
-    top: "25%",
+    top: mobileView ? ( "16%" ) : ( "25%" ),
     right: "3vw"
   }
 
