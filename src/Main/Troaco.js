@@ -61,8 +61,8 @@ export default function Troaco({newAction, openGuestBook, setGuestBook, setShowW
     <>
       {openGuestBook && ( <GuestBook openModal={openGuestBook} newAction={newAction} setOpenModal={setGuestBook} /> )}
       <ToastContainer position="bottom-right" autoClose={5000} />
-        <TopMenu setShowWallet={setShowWallet} showWallet={showWallet} setGuestBook={setGuestBook} />
-        <Logo />
+      <TopMenu mobileView={mobileView} setShowWallet={setShowWallet} showWallet={showWallet} setGuestBook={setGuestBook} />
+        {!mobileView && <Logo />}
 
         <main style={bgStyle}>
           {isMyNfts ? 
@@ -77,7 +77,7 @@ export default function Troaco({newAction, openGuestBook, setGuestBook, setShowW
           setOpenModal={setGuestBook}
         />)}
 
-        <BottomMenu />
+      {!mobileView && <BottomMenu />}
     </>
   )
 }

@@ -87,6 +87,23 @@ nav {
   background-color: var(--nav-bg);
 }
 
+.hamburgerIcon {
+  margin-left: 16px;
+  background: none;
+  border: none;
+}
+
+.mobileDropdownContainer {
+  left: 0;
+  top: 45px !important;
+  width: 100%;
+  text-align: center;
+}
+.mobileDropdownContainer a {
+  width: 100% !important;
+  display: block;
+}
+
 #troacoTopNav {
   margin-top: 30px;
   font-family: VCR;
