@@ -140,7 +140,8 @@ export default function InfoModal({id, metadata, newAction, setOpenModal}) {
               {selectedView === "history" && (
                 <div className="troacoModalRightSideContent">
                   <ul id="troacoModalListContainer">
-                  {events.map((event, i) => { console.log("event: ",event);return (
+                  Coming soon...
+                  {/*events.map((event, i) => { console.log("event: ",event);return (
                     <li className="troacoModalSmallGlass" key={i}>
                       <div className="toacoModalSmallGlassUpperLine">
                         {(event.type === "buy") && 
@@ -158,7 +159,7 @@ export default function InfoModal({id, metadata, newAction, setOpenModal}) {
                         <p className="troacoModalSmallGlassElement troacoModalWeakText">{"{Should calculate date here}"}</p>
                       </div>
                     </li>
-                  )})}
+                  )})*/}
                   </ul>
                 </div>
               )}
