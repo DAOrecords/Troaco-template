@@ -18,6 +18,17 @@ impl Contract {
             .collect()
     }
 
+    /// Get list of tokens for provided list
+    pub fn nft_token_details_for_list(&self, token_list: Vec<TokenId>) -> Vec<JsonToken> {
+        let mut result = Vec::new();
+
+        for i in 0..token_list.len() {
+            result.push(self.nft_token(token_list[i].clone()).unwrap());
+        }
+        
+        result
+    }
+
     /// Get the total supply of NFTs for a given owner (a number)
     pub fn nft_supply_for_owner(
         &self,
