@@ -1310,8 +1310,8 @@ input[type="range"] {
     grid-auto-flow: column;
     grid-template-areas: 'close'
                          'picture'
-                         'right'
                          'audio'
+                         'right'
                          'buttons';
   }
   #troacoModalClose {
@@ -1326,6 +1326,8 @@ input[type="range"] {
   }
   #troacoModalAudio {
     padding-right: 0;
+    margin-left: 16px;
+    margin-bottom: 32px;
   }
   #troacoModalButtons {
     text-align: center;
