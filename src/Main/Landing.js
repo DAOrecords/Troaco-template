@@ -58,7 +58,7 @@ export default function Landing({selected, setSelected, mobileView, nftList, new
   
   const bubbleStyleTemp = {
     margin: "25px",
-    background: "rgba(217, 217, 217, 0.2)",
+    background: mobileView ? ( "rgba(0, 0, 0, 0.5)" ) : ( "rgba(217, 217, 217, 0.2)" ) ,
     fontFamily: 'VCR',
     fontStyle: "normal",
     textTransform: "uppercase",
