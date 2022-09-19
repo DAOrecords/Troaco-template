@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { getBuyableTokens, getListForAccount, verify_sha256 } from '../utils';
+import { getBuyableTokens, getListForAccount } from '../utils';
 import 'regenerator-runtime/runtime';
 import TopMenu from './TopMenu';
 import Landing from './Landing';
@@ -9,8 +9,9 @@ import Logo from './Logo';
 import BottomMenu from './BottomMenu';
 import MyNFTs from './MyNFTs';
 import globeBg from '../assets/globe_bg.jpg';
+import globeVideo from '../assets/globeVideo.mp4';
 import GuestBook from './GuestBook';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 export default function Troaco({newAction, openGuestBook, setGuestBook, setShowWallet, showWallet, isMyNfts}) {
@@ -64,7 +65,12 @@ export default function Troaco({newAction, openGuestBook, setGuestBook, setShowW
       <TopMenu mobileView={mobileView} setShowWallet={setShowWallet} showWallet={showWallet} setGuestBook={setGuestBook} />
         {!mobileView && <Logo />}
 
+        <video id="bgVideo" autoPlay loop muted>
+          <source src={globeVideo} type="video/mp4" />
+        </video>
+        
         <main style={bgStyle}>
+          
           {isMyNfts ? 
             <MyNFTs newAction={newAction} nftList={myNftList} mobileView={mobileView} selected={selected} setSelected={setSelected} />
           : 
