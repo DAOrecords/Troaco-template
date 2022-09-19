@@ -245,8 +245,13 @@ nav {
     height: max-content;
     z-index: 1;
   }
+  #troacoSongMenu {
+    flex-wrap: wrap;
+  }
   #troacoSongMenu li {
     margin-bottom: 12px;
+    margin-right: 32px;
+    font-size: 12px;
   }
   .controlsLast {
     margin-right: 16px;
