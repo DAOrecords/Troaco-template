@@ -247,6 +247,7 @@ nav {
   }
   #troacoSongMenu {
     flex-wrap: wrap;
+    justify-content: flex-end;
   }
   #troacoSongMenu li {
     margin-bottom: 12px;

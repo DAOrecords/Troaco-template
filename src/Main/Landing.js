@@ -74,6 +74,7 @@ export default function Landing({selected, setSelected, mobileView, nftList, new
     alignItems: "center",
     justifyItems: "center",
     justifyContent: "center",
+    textAlign: "center",
     transition: "width 0.3s, height 0.3s, transform 0.3s",         // bubble grow back animation
   }
 
