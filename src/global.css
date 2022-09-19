@@ -405,7 +405,6 @@ main {
   right: 0;
   top: 0;
   bottom: 0;
-  background-repeat: repeat-x;
   z-index: 0;
 }
 
@@ -434,6 +433,11 @@ main {
     overflow-y: scroll;
     height: 100vh;
     width: 100vw;
+  }
+
+  #bgVideo {
+    height: 44vh;
+    top: 175px;
   }
 }
 

@@ -22,7 +22,8 @@ export default function Troaco({newAction, openGuestBook, setGuestBook, setShowW
   const navigate = useNavigate();
 
   const bgStyle = {
-    backgroundImage: `url(${globeBg})`,
+    //backgroundImage: `url(${globeBg})`,
+    background: "black",
     backgroundSize: "auto",
     backgroundPosition: "center",
     backgroundRepeat: "repeat-x",
@@ -66,7 +67,7 @@ export default function Troaco({newAction, openGuestBook, setGuestBook, setShowW
         {!mobileView && <Logo />}
 
         <video id="bgVideo" autoPlay loop muted>
-          <source src={globeVideo} type="video/mp4" />
+          <source src={globeVideo} type="video/mp4" />  
         </video>
         
         <main style={bgStyle}>
