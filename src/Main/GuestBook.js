@@ -20,6 +20,13 @@ export default function GuestBook({newAction, setOpenModal}) {
   }
 
   function sendEntry() {
+    if (!window.accountId) {
+      newAction({
+        errorMsg: "You are not logged in. Please log in first!",
+      });
+      return;
+    }
+
     let href = window.location.href;
     href = href.slice(0, href.indexOf("?")+1);
     history.pushState(null, "Guestbook", href + "?guestbook=1");
@@ -68,7 +75,7 @@ export default function GuestBook({newAction, setOpenModal}) {
 
           <div id="troacoModalRightSide" className="troacoModalGuestbookRightSide">
             <div id="troacoModalGuestbookCurrentAccount">
-              {window.accountId}
+              {window.accountId ? ( window.accountId ) : ( "(You are not logged in)" )}
             </div>
             <textarea onChange={(e) => inputHandler(e.target.value)} placeholder={"Type here..."} value={text} id="guestbookInput" >
             </textarea>

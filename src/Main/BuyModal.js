@@ -9,6 +9,13 @@ export default function TokenModal({id, metadata, newAction, setOpenModal}) {
   const extra = JSON.parse(metadata.extra);
 
   function buyNFT() {
+    if (!window.accountId) {
+      newAction({
+        errorMsg: "You are not logged in. Please log in first!",
+      });
+      return;
+    }
+
     const buyPromise = new Promise(async (resolve, reject) => {
       const buyResult = await buyNFTfromVault(id, extra.original_price);
       if (buyResult) {
