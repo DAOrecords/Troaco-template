@@ -176,7 +176,7 @@ export default function MyNFTs({selected, setSelected, mobileView, nftList, newA
           </ul>
         </Draggable>
       :
-        <h1 className="troacoModalBigText" style={{marginTop: "50vh"}}>You don't have any NFTs yet.</h1>
+        <h1 className="troacoModalBigText troacoCenteredMessage">You don't have any NFTs yet.</h1>
       }
 
       <Arrows selected={selected} setSelected={setSelected} mobileView={mobileView} max={nftList.length-1} />

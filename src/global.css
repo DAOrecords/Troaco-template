@@ -925,7 +925,14 @@ input[type="range"] {
   text-align: center;
 }
 
-
+.troacoCenteredMessage {
+  top: 50vh;
+  width: 100vw;
+  color: #FFFF00 !important;
+  position: fixed;
+  text-align: center;
+  z-index: 2;
+}
 
 .buyModal {
   position: absolute;
