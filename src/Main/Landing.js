@@ -14,6 +14,7 @@ export default function Landing({selected, setSelected, mobileView, nftList, new
   const [pos, setPos] = useState({x: (multiplier*listElementWidth) -bigMargin, y: 0});
   const [candidate, setCandidate] = useState(null);       // This might be the next centered element
   const [startPos, setStartPos] = useState(null);         // The starting X position of mouse when the dragging is started
+  const [lastTouch, setLastTouch] = useState(null);       // The last X position from touch event, there is no clientX at 'touchend'!
   const [isBeingMoved, setIsBeingMoved] = useState(true);
   const [openModal, setOpenModal] = useState(false);
   
