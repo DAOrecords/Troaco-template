@@ -92,9 +92,9 @@ impl Contract {
             admin,
             NFTContractMetadata {
                 spec: "nft-1.0.0".to_string(),
-                name: "SPLASH".to_string(),
-                symbol: "SPLASH".to_string(),
-                icon: Some("https://bafkreidcyhpdyo7kq4kdcr3yr3l5ewyey6mvzqlxjm67n4opqxhw2zllja.ipfs.nftstorage.link/s".to_string()),
+                name: "Rare Vandal".to_string(),
+                symbol: "RARE".to_string(),
+                icon: None,
                 base_uri: None,
                 reference: None,
                 reference_hash: None,
@@ -124,52 +124,5 @@ impl Contract {
         };
 
         this
-    }
-
-    /// Mantravine revenue table alteration function
-    #[payable]
-    pub fn alter_mantravine(&mut self) {
-        let new_revenue_table = HashMap::from([
-            (AccountId::new_unchecked("izzyroo.near".parse().unwrap()), 1700),
-            (AccountId::new_unchecked("farhanremy.near".parse().unwrap()), 1700),
-            (AccountId::new_unchecked("781443edb4ee2ea3bce333f2fe2fe4e597c58ee050eb9e97f0a5b8d21c33bf9e".parse().unwrap()), 1700),
-            (AccountId::new_unchecked("adelinethc.near".parse().unwrap()), 1500),
-            (AccountId::new_unchecked("mantravine.near".parse().unwrap()), 3400)
-        ]);
-        let total = 1700 + 1700 + 1700 + 1500 + 3400;
-
-        let mut root = self.tokens_by_id.get(&"fono-root-4".parse().unwrap()).unwrap();
-        root.revenue = new_revenue_table.clone();
-        self.tokens_by_id.insert(&"fono-root-4".parse().unwrap(), &root);
-
-
-        for n in 0..25 {
-            let current_id = format!("fono-root-4-{}", n);
-            if !self.tokens_by_id.contains_key(&current_id) { continue; }
-            let mut instance = self.tokens_by_id.get(&current_id).unwrap();
-            instance.revenue = new_revenue_table.clone();
-            self.tokens_by_id.insert(&current_id, &instance);
-        }
-
-        assert_eq!(total, 10000, "Total should be 100%");
-    }
-
-    /// DavePsy description alteration
-    #[payable]
-    pub fn alter_davepsy(&mut self) {
-        let new_description = "This is a song about being late again.....again.  Loosely based on an old Oddities jam from 2003, it's evident that in the past 20 years not much has changed for davepsy. Alarm clocks are his apparent kryptonite. Rapping about them helps, if only slightly. Nineteen Ninety Nix (Circle Research) ties the sound all the way together with the requisite beats, bleeps and boops that he does so well. We put the fun in frustration. (it's not....there?) We misplaced the fun in frustration.";
-
-        let mut root = self.token_metadata_by_id.get(&"fono-root-12".parse().unwrap()).unwrap();
-        root.description = Some(new_description.clone().to_string());
-        self.token_metadata_by_id.insert(&"fono-root-12".parse().unwrap(), &root);
-
-
-        for n in 0..25 {
-            let current_id = format!("fono-root-12-{}", n);
-            if !self.tokens_by_id.contains_key(&current_id) { continue; }
-            let mut instance = self.token_metadata_by_id.get(&current_id).unwrap();
-            instance.description = Some(new_description.clone().to_string());
-            self.token_metadata_by_id.insert(&current_id, &instance);
-        }
     }
 }
