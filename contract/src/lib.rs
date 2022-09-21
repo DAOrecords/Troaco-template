@@ -93,7 +93,7 @@ impl Contract {
             NFTContractMetadata {
                 spec: "nft-1.0.0".to_string(),
                 name: "Rare Vandal".to_string(),
-                symbol: "RARE".to_string(),
+                symbol: "RVNDL".to_string(),
                 icon: None,
                 base_uri: None,
                 reference: None,
