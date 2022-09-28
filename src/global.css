@@ -1337,6 +1337,10 @@ input[type="range"] {
     margin-bottom: 32px;
     margin-top: 32px;
   }
+  #troacoModalPicture img {
+    width: 68vw;
+    height: 68vw;
+  }
   #troacoModalAudio {
     padding-right: 0;
     margin-left: 16px;
