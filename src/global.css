@@ -242,7 +242,7 @@ nav {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: max-content;
+    width: max-content;
     z-index: 1;
   }
   #troacoSongMenu {

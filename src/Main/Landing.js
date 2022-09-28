@@ -31,7 +31,7 @@ export default function Landing({selected, setSelected, mobileView, nftList, new
     listStyleType: "none",
     display: "flex",
     alignItems: "center",
-    height: mobileView ? ( "80vh" ) : ( "100vh" ),
+    height: mobileView ? ( "100vh" ) : ( "100vh" ),
     width: "max-content",
     margin: "0",
     padding: "0",
@@ -163,6 +163,12 @@ export default function Landing({selected, setSelected, mobileView, nftList, new
     setCandidate(index);
   }
 
+  function mobileMenuClickHandler(event, index) {
+    event.stopPropagation();
+    setSelected(index);
+    setOpenModal(true);
+  }
+
   return (
     <div style={containerStyleTemp}> 
       {(nftList.length === 0) ? (
@@ -191,7 +197,7 @@ export default function Landing({selected, setSelected, mobileView, nftList, new
 
       <Arrows selected={selected} setSelected={setSelected} mobileView={mobileView} max={nftList.length-1} />
 
-      <SongNavigation nftList={nftList} selected={selected} setSelected={setSelected} />
+      <SongNavigation nftList={nftList} selected={selected} setSelected={setSelected} mobileMenuClickHandler={mobileMenuClickHandler} mobileView={mobileView} />
 
       {(openModal && <BuyModal 
           key={selected}

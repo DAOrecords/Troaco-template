@@ -182,7 +182,7 @@ export default function MyNFTs({selected, setSelected, mobileView, nftList, newA
 
       <Arrows selected={selected} setSelected={setSelected} mobileView={mobileView} max={nftList.length-1} />
 
-      <SongNavigation nftList={nftList} selected={selected} setSelected={setSelected} />
+      <SongNavigation nftList={nftList} selected={selected} setSelected={setSelected} mobileView={mobileView} />
 
       {(openModal && <InfoModal
           key={selected}
