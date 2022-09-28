@@ -11,7 +11,7 @@ export default function SongNavigation({nftList, selected, setSelected, mobileMe
             {nftList.map((nft, i) => (
               <li 
                 key={nft.token_id} 
-                onClick={(e) => mobileMenuClickHandler(e, i)}
+                onTouchStart={(e) => mobileMenuClickHandler(e, i)}
                 className={i === selected ? "troacoSongSelected" : null}
               >
                   {nft.metadata.title}
