@@ -80,6 +80,7 @@ export default function Landing({selected, setSelected, mobileView, nftList, new
   }
 
   const bubbleStyleSelectedTemp = {
+    display: openModal ? ( "none" ) : ( "flex" ),
     color: "#FFFFFF",
     background: "rgba(0, 0, 0, 0.7)",
     fontSize: mobileView ? ( "16px" ) : ( "22px" ),
