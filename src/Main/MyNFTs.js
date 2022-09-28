@@ -154,6 +154,14 @@ export default function MyNFTs({selected, setSelected, mobileView, nftList, newA
     setCandidate(index);
   }
 
+  function mobileMenuClickHandler(xDifference, index) {
+    const menuOpenThreshold = 10;
+    if (Math.abs(xDifference) < menuOpenThreshold) {
+      setSelected(index);
+      setOpenModal(true);
+    }
+  }
+
   return (
     <div style={containerStyleTemp}> 
       {(nftList.length > 0) ? 
@@ -182,7 +190,7 @@ export default function MyNFTs({selected, setSelected, mobileView, nftList, newA
 
       <Arrows selected={selected} setSelected={setSelected} mobileView={mobileView} max={nftList.length-1} />
 
-      <SongNavigation nftList={nftList} selected={selected} setSelected={setSelected} mobileView={mobileView} />
+      <SongNavigation nftList={nftList} selected={selected} setSelected={setSelected} mobileMenuClickHandler={mobileMenuClickHandler} mobileView={mobileView} />
 
       {(openModal && <InfoModal
           key={selected}
