@@ -163,10 +163,12 @@ export default function Landing({selected, setSelected, mobileView, nftList, new
     setCandidate(index);
   }
 
-  function mobileMenuClickHandler(event, index) {
-    event.stopPropagation();
-    setSelected(index);
-    setOpenModal(true);
+  function mobileMenuClickHandler(xDifference, index) {
+    const menuOpenThreshold = 10;
+    if (Math.abs(xDifference) < menuOpenThreshold) {
+      setSelected(index);
+      setOpenModal(true);
+    }
   }
 
   return (
