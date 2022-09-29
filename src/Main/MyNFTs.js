@@ -80,6 +80,7 @@ export default function MyNFTs({selected, setSelected, mobileView, nftList, newA
   const bubbleStyleSelectedTemp = {
     display: openModal ? ( "none" ) : ( "flex" ),
     color: "#FFFFFF",
+    background: "rgba(0, 0, 0, 0.7)",
     fontSize: mobileView ? ( "16px" ) : ( "24px" ),
     lineHeight: "21px",
     width: "160%",
