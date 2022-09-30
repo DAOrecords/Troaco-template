@@ -16,7 +16,7 @@ import { useNavigate } from 'react-router-dom';
 export default function Troaco({newAction, openGuestBook, setGuestBook, setShowWallet, showWallet, isMyNfts}) {
   const [selected, setSelected] = useState(0);
   const [nftList, setNftList] = React.useState([]); 
-  const [myNftList, setMyNftList] = React.useState([]);
+  const [myNftList, setMyNftList] = React.useState(null);
   const mobileView = window.innerWidth < 1200;
   const navigate = useNavigate();
 
@@ -54,8 +54,6 @@ export default function Troaco({newAction, openGuestBook, setGuestBook, setShowW
     setNftList(orderedBuyable);
     setMyNftList(listForLoggedInUser);
   }, [])
-
-  if (nftList.length === 0) return <p>Loading...</p>
 
   
   return (

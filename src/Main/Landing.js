@@ -174,7 +174,7 @@ export default function Landing({selected, setSelected, mobileView, nftList, new
   return (
     <div style={containerStyleTemp}> 
       {(nftList.length === 0) ? (
-        <h1 className="troacoModalBigText" style={{marginTop: "50vh"}}>Loading NFTs ...</h1>
+        <h1 className="troacoModalBigText troacoCenteredMessage">Loading NFTs ...</h1>
       ) : (
         <Draggable axis={"x"} defaultPosition={{x: 500, y: 0}} position={pos}
           onStart={eventHandler} onDrag={eventHandler} onStop={eventHandler} cancel=".cancel"  >
