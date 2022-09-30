@@ -30,6 +30,7 @@ export default function InfoModal({id, metadata, newAction, setOpenModal}) {
 
   useEffect(async () => {
     const urlParams = window.location.search;
+    window.history.pushState({}, document.title, "/" + "");
     if (urlParams.includes('errorCode')) {
       newAction({
         errorMsg: "There was an error while processing the transaction!", errorMsgDesc: "errorCode",

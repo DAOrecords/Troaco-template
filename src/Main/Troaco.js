@@ -30,6 +30,7 @@ export default function Troaco({newAction, openGuestBook, setGuestBook, setShowW
 
   React.useEffect(async () => {    
     const urlParams = window.location.search;
+    window.history.pushState({}, document.title, "/" + "");
     if (urlParams.includes('errorCode')) {
       const urlObj = new URLSearchParams(document.location.search);
       newAction({
