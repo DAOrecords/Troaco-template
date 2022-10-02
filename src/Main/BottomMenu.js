@@ -5,17 +5,11 @@ export default function BottomMenu() {
   return (
     <>
       <div id="troacoSocialLinks">
-        <a href={'https://twitter.com'}>
+        <a href={'https://twitter.com/vandigital'}>
           <Twitter />
         </a>
-        <a href={'https://discord.com'}>
-          <Discord />
-        </a>
-        <a href={'https://instagram.com'}>
+        <a href={'https://www.instagram.com/vandigital/'}>
           <Insta />
-        </a>
-        <a href={'https://github.com'}>
-          <GitHub />
         </a>
       </div>
       <p id="troacoLogo"><DAOrecordsTemp /></p>

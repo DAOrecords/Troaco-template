@@ -201,7 +201,7 @@ export async function getNextBuyableInstance(rootId) {
 }
 
 export async function getListForAccount() {
-  let result = null;
+  let result = [];
   
   const options = {
     account_id: window.accountId,

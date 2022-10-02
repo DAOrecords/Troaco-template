@@ -30,6 +30,7 @@ export default function InfoModal({id, metadata, newAction, setOpenModal}) {
 
   useEffect(async () => {
     const urlParams = window.location.search;
+    window.history.pushState({}, document.title, "/" + "");
     if (urlParams.includes('errorCode')) {
       newAction({
         errorMsg: "There was an error while processing the transaction!", errorMsgDesc: "errorCode",
@@ -117,7 +118,7 @@ export default function InfoModal({id, metadata, newAction, setOpenModal}) {
                             <p className="troacoModalSmallGlassElement troacoModalStrongText troacoModalSmallGlassGenMargin"># {extra.generation}</p>
                           </div>
                           <div className="troacoModalSmallGlassBottomLine">
-                            {(i%2) ?
+                            {(false) ?
                             <>
                               <p className="troacoModalSmallGlassElement troacoModalWeakText">For sale for {"{{NOT IMPLEMENTED}} "} 
                               <img className="troacoModalSmallGlassPriceMargin" src={nearLogo}></img></p>

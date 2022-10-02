@@ -14,6 +14,7 @@ export default function Landing({selected, setSelected, mobileView, nftList, new
   const [pos, setPos] = useState({x: (multiplier*listElementWidth) -bigMargin, y: 0});
   const [candidate, setCandidate] = useState(null);       // This might be the next centered element
   const [startPos, setStartPos] = useState(null);         // The starting X position of mouse when the dragging is started
+  const [lastTouch, setLastTouch] = useState(null);       // The last X position from touch event, there is no clientX at 'touchend'!
   const [isBeingMoved, setIsBeingMoved] = useState(true);
   const [openModal, setOpenModal] = useState(false);
   
@@ -30,7 +31,7 @@ export default function Landing({selected, setSelected, mobileView, nftList, new
     listStyleType: "none",
     display: "flex",
     alignItems: "center",
-    height: mobileView ? ( "80vh" ) : ( "100vh" ),
+    height: mobileView ? ( "100vh" ) : ( "100vh" ),
     width: "max-content",
     margin: "0",
     padding: "0",
@@ -58,7 +59,7 @@ export default function Landing({selected, setSelected, mobileView, nftList, new
   
   const bubbleStyleTemp = {
     margin: "25px",
-    background: "rgba(217, 217, 217, 0.2)",
+    background: mobileView ? ( "rgba(0, 0, 0, 0.5)" ) : ( "rgba(217, 217, 217, 0.2)" ) ,
     fontFamily: 'VCR',
     fontStyle: "normal",
     textTransform: "uppercase",
@@ -74,11 +75,14 @@ export default function Landing({selected, setSelected, mobileView, nftList, new
     alignItems: "center",
     justifyItems: "center",
     justifyContent: "center",
+    textAlign: "center",
     transition: "width 0.3s, height 0.3s, transform 0.3s",         // bubble grow back animation
   }
 
   const bubbleStyleSelectedTemp = {
+    display: openModal ? ( "none" ) : ( "flex" ),
     color: "#FFFFFF",
+    background: "rgba(0, 0, 0, 0.7)",
     fontSize: mobileView ? ( "16px" ) : ( "22px" ),
     lineHeight: "21px",
     width: "160%",
@@ -159,10 +163,18 @@ export default function Landing({selected, setSelected, mobileView, nftList, new
     setCandidate(index);
   }
 
+  function mobileMenuClickHandler(xDifference, index) {
+    const menuOpenThreshold = 10;
+    if (Math.abs(xDifference) < menuOpenThreshold) {
+      setSelected(index);
+      setOpenModal(true);
+    }
+  }
+
   return (
     <div style={containerStyleTemp}> 
       {(nftList.length === 0) ? (
-        <h1 className="troacoModalBigText" style={{marginTop: "50vh"}}>Loading NFTs ...</h1>
+        <h1 className="troacoModalBigText troacoCenteredMessage">Loading NFTs ...</h1>
       ) : (
         <Draggable axis={"x"} defaultPosition={{x: 500, y: 0}} position={pos}
           onStart={eventHandler} onDrag={eventHandler} onStop={eventHandler} cancel=".cancel"  >
@@ -187,7 +199,7 @@ export default function Landing({selected, setSelected, mobileView, nftList, new
 
       <Arrows selected={selected} setSelected={setSelected} mobileView={mobileView} max={nftList.length-1} />
 
-      <SongNavigation nftList={nftList} selected={selected} setSelected={setSelected} />
+      <SongNavigation nftList={nftList} selected={selected} setSelected={setSelected} mobileMenuClickHandler={mobileMenuClickHandler} mobileView={mobileView} />
 
       {(openModal && <BuyModal 
           key={selected}

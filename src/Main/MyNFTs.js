@@ -78,7 +78,9 @@ export default function MyNFTs({selected, setSelected, mobileView, nftList, newA
   }
 
   const bubbleStyleSelectedTemp = {
+    display: openModal ? ( "none" ) : ( "flex" ),
     color: "#FFFFFF",
+    background: "rgba(0, 0, 0, 0.7)",
     fontSize: mobileView ? ( "16px" ) : ( "24px" ),
     lineHeight: "21px",
     width: "160%",
@@ -153,45 +155,61 @@ export default function MyNFTs({selected, setSelected, mobileView, nftList, newA
     setCandidate(index);
   }
 
+  function mobileMenuClickHandler(xDifference, index) {
+    const menuOpenThreshold = 10;
+    if (Math.abs(xDifference) < menuOpenThreshold) {
+      setSelected(index);
+      setOpenModal(true);
+    }
+  }
+
   return (
-    <div style={containerStyleTemp}> 
-      {(nftList.length > 0) ? 
-        <Draggable axis={"x"} defaultPosition={{x: 500, y: 0}} position={pos}
-        onStart={eventHandler} onDrag={eventHandler} onStop={eventHandler} cancel=".cancel"  >
-          <ul style={isBeingMoved ? {...ulStyleTemp, ...transitionStyleTemp} : ulStyleTemp}>
-            {nftList.map((nft, i) => {
-              return (
-                <li style={i === selected ? {...liStyleTemp, ...liStyleSelectedTemp} : liStyleTemp} 
-                      onMouseDown={() => bubbleClickHandler(i)} 
-                      onTouchStart={() => bubbleClickHandler(i)}
-                      key={i} prop 
-                      className={i === selected ? "cancel" : null}
-                  >
-                  <div style={i === selected ? {...bubbleStyleTemp, ...bubbleStyleSelectedTemp} : bubbleStyleTemp}>
-                    {nft.metadata.title}
-                  </div>
-                </li>
-              )
-            })}
-          </ul>
-        </Draggable>
-      :
-        <h1 className="troacoModalBigText" style={{marginTop: "50vh"}}>You don't have any NFTs yet.</h1>
+    <div style={containerStyleTemp}>
+      {(nftList) ? 
+
+        <>
+          {(nftList.length > 0) ? 
+            <Draggable axis={"x"} defaultPosition={{x: 500, y: 0}} position={pos}
+            onStart={eventHandler} onDrag={eventHandler} onStop={eventHandler} cancel=".cancel"  >
+              <ul style={isBeingMoved ? {...ulStyleTemp, ...transitionStyleTemp} : ulStyleTemp}>
+                {nftList.map((nft, i) => {
+                  return (
+                    <li style={i === selected ? {...liStyleTemp, ...liStyleSelectedTemp} : liStyleTemp} 
+                          onMouseDown={() => bubbleClickHandler(i)} 
+                          onTouchStart={() => bubbleClickHandler(i)}
+                          key={i} prop 
+                          className={i === selected ? "cancel" : null}
+                      >
+                      <div style={i === selected ? {...bubbleStyleTemp, ...bubbleStyleSelectedTemp} : bubbleStyleTemp}>
+                        {nft.metadata.title}
+                      </div>
+                    </li>
+                  )
+                })}
+              </ul>
+            </Draggable>
+          :
+            <h1 className="troacoModalBigText troacoCenteredMessage">You don't have any NFTs yet.</h1>
+          }
+    
+          <Arrows selected={selected} setSelected={setSelected} mobileView={mobileView} max={nftList.length-1} />
+    
+          <SongNavigation nftList={nftList} selected={selected} setSelected={setSelected} mobileMenuClickHandler={mobileMenuClickHandler} mobileView={mobileView} />
+    
+          {(openModal && <InfoModal
+              key={selected}
+              id={nftList[selected].token_id}
+              metadata={nftList[selected].metadata}
+              image={null}
+              newAction={newAction}
+              setOpenModal={setOpenModal}
+            />
+          )}
+        </>
+        
+      : 
+        <h1 className="troacoModalBigText troacoCenteredMessage">Loading NFTs ...</h1>
       }
-
-      <Arrows selected={selected} setSelected={setSelected} mobileView={mobileView} max={nftList.length-1} />
-
-      <SongNavigation nftList={nftList} selected={selected} setSelected={setSelected} />
-
-      {(openModal && <InfoModal
-          key={selected}
-          id={nftList[selected].token_id}
-          metadata={nftList[selected].metadata}
-          image={null}
-          newAction={newAction}
-          setOpenModal={setOpenModal}
-        />
-      )}
     </div>
   )
 }
