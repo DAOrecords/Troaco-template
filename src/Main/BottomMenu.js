@@ -5,11 +5,17 @@ export default function BottomMenu() {
   return (
     <>
       <div id="troacoSocialLinks">
-        <a href={'https://twitter.com/vandigital'}>
+        <a className="socialLine" href={'https://twitter.com/vandigital'}>
           <Twitter />
+          <p className="socialLinkName">@vandigital</p>
         </a>
-        <a href={'https://www.instagram.com/vandigital/'}>
+        <a className="socialLine" href={'https://www.instagram.com/vandigital/'}>
           <Insta />
+          <p className="socialLinkName">@vandigital</p>
+        </a>
+        <a className="socialLine" href={'https://medium.com/@daorecords/vandal-revives-his-classic-album-troaco-4b7c231af438'}>
+          <Medium />
+          <p className="socialLinkName">Vandal on Medium</p>
         </a>
       </div>
       <p id="troacoLogo"><DAOrecordsTemp /></p>
@@ -72,4 +78,10 @@ function DAOrecordsTemp() {
       <path d="M48.8885 64.1894C48.324 64.0934 47.7768 64.1585 47.2261 64.2884C46.9451 64.3542 46.8645 64.4996 46.8747 64.7748C46.8944 65.302 46.8805 65.8292 46.8805 66.3561C46.8805 66.8998 46.8955 67.4441 46.8747 67.9868C46.864 68.2849 46.992 68.3348 47.2536 68.3398C47.5405 68.3454 47.6184 68.2412 47.6131 67.9678C47.5984 67.1942 47.6083 66.4198 47.6083 65.6454C47.6083 64.9252 47.7211 64.8212 48.4616 64.8788C48.5603 64.883 48.6579 64.8998 48.752 64.9292C49.0829 65.0486 49.0824 64.803 49.1451 64.5996C49.2213 64.3494 49.1371 64.2316 48.8885 64.1894Z" fill="black"/>
     </svg>
   );
+}
+
+function Medium() {
+  return(
+    <p style={{color: "#F2F2F2"}}>M</p>
+  )
 }

@@ -157,8 +157,18 @@ nav {
   flex-direction: column;
 }
 
-#troacoSocialLinks a {
+.socialLine {
   margin-top: 4px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-decoration: none;
+}
+
+.socialLinkName {
+  margin-left: 8px;
+  color: #F2F2F2;
+  text-decoration: none;
 }
 
 #troacoLogo {
