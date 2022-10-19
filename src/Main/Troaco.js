@@ -43,7 +43,7 @@ export default function Troaco({newAction, openGuestBook, setGuestBook, setShowW
       });
     }
 
-    const buyable = await getBuyableTokens();
+    const buyable = (await getBuyableTokens()).slice(0,13);       // We filter out the BeatDAO NFTs that are only here  by accident
     const orderedBuyable = buyable.sort(function(a, b) {
       const firstNum = a.token_id.slice(10, a.token_id.lastIndexOf("-"));
       const secondNum = b.token_id.slice(10, b.token_id.lastIndexOf("-"));
