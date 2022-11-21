@@ -144,7 +144,7 @@ nav {
   top: unset;
   background: transparent;
   justify-content: space-between;
-  align-items: baseline;
+  /*align-items: baseline;*/
   position: absolute;
   z-index: 2;
 }
@@ -605,6 +605,7 @@ main {
 
 input::-webkit-outer-spin-button,input::-webkit-inner-spin-button {
   -webkit-appearance: none;
+  appearance: none;
   margin: 0;
 }
 
@@ -612,6 +613,7 @@ input::-webkit-outer-spin-button,input::-webkit-inner-spin-button {
 
 input[type=number] {
   -moz-appearance: textfield;
+  appearance: none;
 }
 
 .royaltyList {
@@ -829,6 +831,7 @@ h1 {
 
 .musicControlsSlider::-webkit-slider-thumb {
   -webkit-appearance: none;
+  appearance: none;
   height: 8px;
   width: 20px;
   /*border: 7px solid var(--control-grey);*/
@@ -850,6 +853,7 @@ h1 {
 
 .musicControlsSlider::-moz-range-thumb {
   -webkit-appearance: none;
+  appearance: none;
   height: 8px;
   width: 20x;
   /*border: 7px solid var(--control-grey);*/
