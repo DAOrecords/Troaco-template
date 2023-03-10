@@ -14,7 +14,7 @@ export default function AudioPlayer({music, cid}) {
   }
   
   React.useEffect(async () => {
-    playerRef.current.volume = 0.50;
+    playerRef.current.volume = 0.75;
     return () => {
       clearTimeout(timeoutId)
     };
